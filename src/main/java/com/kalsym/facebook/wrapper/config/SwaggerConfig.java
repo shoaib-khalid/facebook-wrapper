@@ -9,29 +9,30 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- *
- * @author Sarosh
- */
+/** @author Sarosh */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Bean
-    public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                //.paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.kalsym.facebook.wrapper"))
-                .build()
-                .apiInfo(apiInfo());
-    }
+  @Bean
+  public Docket productApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .select()
+        // .paths(PathSelectors.any())
+        .apis(RequestHandlerSelectors.basePackage("com.kalsym.facebook.wrapper"))
+        .build()
+        .apiInfo(apiInfo());
+  }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Facebook wrapper for KBot")
-                .description("Facebook wrapper does wrapping of messages between Kbot core and messenger API")
-                .termsOfServiceUrl("TBA")
-                .license("TBA")
-                .licenseUrl("").version("1.0").build();
-    }
+  private ApiInfo apiInfo() {
+    return new ApiInfoBuilder()
+        .title("Facebook wrapper for KBot")
+        .description(
+            "Facebook wrapper does wrapping of messages between Kbot core and messenger API")
+        .termsOfServiceUrl("TBA")
+        .license("TBA")
+        .licenseUrl("")
+        .version("1.0")
+        .build();
+  }
 }
