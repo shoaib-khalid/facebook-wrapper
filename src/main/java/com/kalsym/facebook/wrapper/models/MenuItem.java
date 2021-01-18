@@ -5,20 +5,22 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-/** @author Sarosh */
+/**
+ * @author Sarosh
+ */
 @Getter
 @Setter
 public class MenuItem {
 
-  @NotNull
-  @Size(min = 2, max = 10)
-  private String type;
+    @NotNull
+    @Size(min = 2, max = 10)
+    private String type;
 
-  @NotNull
-  @Size(min = 2, max = 20)
-  private String title;
+    @NotNull
+    @Size(min = 2, max = 20)
+    private String title;
 
-  @NotNull
-  @Size(min = 1, max = 1000)
-  private String payload;
+    @NotNull
+    @Size(min = 1, max = 1000)
+    private String payload;
 }

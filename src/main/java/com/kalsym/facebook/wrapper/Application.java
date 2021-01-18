@@ -9,23 +9,23 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 
-  @Bean
-  public Messenger messenger(
-      @Value("${messenger.pageAccessToken}") String pageAccessToken,
-      @Value("${messenger.appSecret}") final String appSecret,
-      @Value("${messenger.verifyToken}") final String verifyToken) {
-    return Messenger.create(pageAccessToken, appSecret, verifyToken);
-  }
+    @Bean
+    public Messenger messenger(
+            @Value("${messenger.pageAccessToken}") String pageAccessToken,
+            @Value("${messenger.appSecret}") final String appSecret,
+            @Value("${messenger.verifyToken}") final String verifyToken) {
+        return Messenger.create(pageAccessToken, appSecret, verifyToken);
+    }
 
-  public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
-    System.out.println(
-        "                                               \n"
-            + ",--. ,--.        ,--.                          \n"
-            + "|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. \n"
-            + "|  .   ' ' ,-.  ||  |(  .-' \\  '  / |        | \n"
-            + "|  |\\   \\\\ '-'  ||  |.-'  `) \\   '  |  |  |  | \n"
-            + "`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' \n"
-            + "                           `---'               ");
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+        System.out.println(
+                "                                               \n"
+                + ",--. ,--.        ,--.                          \n"
+                + "|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. \n"
+                + "|  .   ' ' ,-.  ||  |(  .-' \\  '  / |        | \n"
+                + "|  |\\   \\\\ '-'  ||  |.-'  `) \\   '  |  |  |  | \n"
+                + "`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' \n"
+                + "                           `---'               ");
+    }
 }

@@ -13,13 +13,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class SimpleMessage {
+public class Conversation {
 
     @NotNull
     @Size(min = 2, max = 3)
     private List<String> recipientIds;
 
-    @NotNull
     @Size(min = 2, max = 1000)
     private String message;
 
