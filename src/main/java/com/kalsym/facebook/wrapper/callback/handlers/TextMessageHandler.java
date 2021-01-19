@@ -32,7 +32,7 @@ public class TextMessageHandler {
             final String recipientId = event.recipientId();
             final Instant timestamp = event.timestamp();
             if (event.baseEventType() != STANDBY) {
-                final String backEndMessageEndpoint = ConfigReader.environment.getProperty("backend.message.endpoint", "callback/message");
+                final String backEndMessageEndpoint = ConfigReader.environment.getProperty("backend.message.endpoint", "callback/message/");
 //            final String backEndPostbackEndpoint = ConfigReader.environment.getProperty("backend.postback.endpoint", "callback/postback");
 
                 LOG.info("Received message '{}' with text '{}' from user '{}' to user {} at '{}'", messageId, messageText, senderId, recipientId, timestamp);
@@ -42,7 +42,7 @@ public class TextMessageHandler {
                 /* forward to backend for */
                 RequestPayload data = new RequestPayload(messageText, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
                 RestTemplate restTemplate = new RestTemplate();
-                ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + backEndMessageEndpoint + "/" + "?" + queryParams, data, String.class);
+                ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + "/inbound/message/" + "?" + queryParams, data, String.class);
                 return response;
             } else {
 

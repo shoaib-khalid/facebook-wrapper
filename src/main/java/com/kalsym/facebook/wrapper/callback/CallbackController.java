@@ -60,7 +60,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/callback")
-public class CallbackHandler {
+public class CallbackController {
 
     private static final Logger LOG = LoggerFactory.getLogger("application");
     private final Messenger messenger;
@@ -68,7 +68,7 @@ public class CallbackHandler {
     private Environment env;
 
     @Autowired
-    public CallbackHandler(final Messenger messenger) {
+    public CallbackController(final Messenger messenger) {
         this.messenger = messenger;
     }
 
@@ -86,7 +86,7 @@ public class CallbackHandler {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<String> verifyWebhook(
+    public ResponseEntity<String> verify(
             @RequestParam(MODE_REQUEST_PARAM_NAME) final String mode,
             @RequestParam(VERIFY_TOKEN_REQUEST_PARAM_NAME) final String verifyToken,
             @RequestParam(CHALLENGE_REQUEST_PARAM_NAME) final String challenge) {
@@ -113,7 +113,7 @@ public class CallbackHandler {
      * @return
      */
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Void> handleCallback(
+    public ResponseEntity<Void> handle(
             @RequestBody final String payload,
             @RequestHeader(SIGNATURE_HEADER_NAME) final String signature) {
         LOG.debug(
@@ -173,10 +173,10 @@ public class CallbackHandler {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/pushSimpleMessage", method = RequestMethod.POST, consumes = "Application/json")
+    @RequestMapping(value = "/textmessage/push/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> pushSimpleMessage(@RequestBody com.kalsym.facebook.wrapper.models.SimpleMessage requestData) {
         try {
-            LOG.debug("[{}] received simple message request [{}] ", requestData.getRefId(), requestData.toString());
+            LOG.info("[{}] received simple message request [{}] ", requestData.getRefId(), requestData.toString());
             final List<String> recipientIds = requestData.getRecipientIds();
             final String refId = requestData.getRefId();
             final String message = requestData.getMessage();
@@ -201,7 +201,7 @@ public class CallbackHandler {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/pushMediaMessage", method = RequestMethod.POST, consumes = "Application/json")
+    @RequestMapping(value = "/mediamessage/push/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> pushMediaMessage(@RequestBody com.kalsym.facebook.wrapper.models.MediaMessage requestData) {
         try {
             LOG.debug("[{}] received media message request [{}] ", requestData.getRefId(), requestData.toString());
@@ -259,7 +259,7 @@ public class CallbackHandler {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/pushMenuMessage", method = RequestMethod.POST, consumes = "Application/json")
+    @RequestMapping(value = "/menumessage/push/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> pushMenuMessage(@RequestBody com.kalsym.facebook.wrapper.models.PushMessage requestData) {
         try {
             final List<String> recipientIds = requestData.getRecipientIds();
@@ -317,7 +317,7 @@ public class CallbackHandler {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/passConversationToCustomerService", method = RequestMethod.POST, consumes = "Application/json")
+    @RequestMapping(value = "/coversation/pass/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> passConversationToCustomerService(@RequestBody com.kalsym.facebook.wrapper.models.Conversation requestData) {
         try {
             LOG.debug("[{}] received pass conversatio control request [{}] ", requestData.getRefId(), requestData.toString());
@@ -344,7 +344,7 @@ public class CallbackHandler {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/takeConversationFromCustomerService", method = RequestMethod.POST, consumes = "Application/json")
+    @RequestMapping(value = "/coversation/take/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> takeConversationFromCustomerService(@RequestBody com.kalsym.facebook.wrapper.models.Conversation requestData) {
         try {
             LOG.debug("[{}] received take conversatio control request [{}] ", requestData.getRefId(), requestData.toString());
