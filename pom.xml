@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.kalsym</groupId>
     <artifactId>facebook.wrapper</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2-MVP</version>
     <name>facebook-wrapper</name>
     <description>Messenger interface to receive requests from channels specifically Facebook messenger</description>
 

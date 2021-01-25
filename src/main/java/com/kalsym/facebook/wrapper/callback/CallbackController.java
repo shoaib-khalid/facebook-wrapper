@@ -31,17 +31,24 @@ import static com.kalsym.facebook.wrapper.callback.handlers.AttachmentMessageHan
 import static com.kalsym.facebook.wrapper.callback.handlers.MessageEchoHandler.handleMessageEchoEvent;
 import com.kalsym.facebook.wrapper.callback.handlers.PostbackHandler;
 import com.kalsym.facebook.wrapper.callback.handlers.TextMessageHandler;
+import com.kalsym.facebook.wrapper.config.ConfigReader;
 import com.kalsym.facebook.wrapper.enums.ButtonType;
 import com.kalsym.facebook.wrapper.enums.MediaType;
 import com.kalsym.facebook.wrapper.handover.HandoverHelper;
 import com.kalsym.facebook.wrapper.models.MenuItem;
+import com.kalsym.facebook.wrapper.models.RequestPayload;
 import com.kalsym.facebook.wrapper.sender.SendHelper;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +61,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author z33Sh
@@ -317,7 +325,7 @@ public class CallbackController {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/coversation/pass/", method = RequestMethod.POST, consumes = "Application/json")
+    @RequestMapping(value = "/conversation/pass/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> passConversationToCustomerService(@RequestBody com.kalsym.facebook.wrapper.models.Conversation requestData) {
         try {
             LOG.debug("[{}] received pass conversatio control request [{}] ", requestData.getRefId(), requestData.toString());
@@ -344,22 +352,55 @@ public class CallbackController {
      * @param requestData
      * @return
      */
-    @RequestMapping(value = "/coversation/take/", method = RequestMethod.POST, consumes = "Application/json")
-    public ResponseEntity<Void> takeConversationFromCustomerService(@RequestBody com.kalsym.facebook.wrapper.models.Conversation requestData) {
+    @RequestMapping(value = "/conversation/handle/", method = RequestMethod.POST, consumes = "Application/json")
+    public ResponseEntity<Void> takeConversationFromCustomerService(@RequestBody String requestData) {
         try {
-            LOG.debug("[{}] received take conversatio control request [{}] ", requestData.getRefId(), requestData.toString());
-            final List<String> recipientIds = requestData.getRecipientIds();
-            final String refId = requestData.getRefId();
-//            final String message = requestData.getMessage();
+            LOG.info("requestData: [{}]", requestData);
 
-            LOG.info("[{}] received take conversation control request for recipients [{}]", refId, recipientIds.toString());
+            JSONObject exitObject = new JSONObject(requestData);
+
+            LOG.info("exitArray: [{}]", exitObject);
+            JSONObject visitorData = exitObject.getJSONObject("visitor");
+            LOG.info("visitorData: [{}]", visitorData);
+            String vistorToken = visitorData.getString("token");
+            LOG.info("vistorToken: [{}]", vistorToken);
+
+            JSONObject agentData = exitObject.getJSONObject("agent");
+            LOG.info("agentData: [{}]", agentData);
+            String agentName = visitorData.getString("name");
+            LOG.info("agentName: [{}]", agentName);
+
+            String event = exitObject.getString("type");
+            LOG.info("event: [{}]", event);
+
+            final List<String> recipientIds = new LinkedList<>();
+            recipientIds.add(vistorToken);
+            //final String refId = requestData.getRefId();
+
+            LOG.info("received take conversation control request for recipients [{}]", recipientIds.toString());
             recipientIds.forEach(recip -> {
                 String recipient = (String) recip;
                 HandoverResponse resp = HandoverHelper.takeFromSecondaryReceiver(messenger, recipient);
-                LOG.info("[{}] [{}] take handover response [{}]", refId, recipient, resp);
+                LOG.info("[{}] take handover response [{}]", recipient, resp);
             });
-        } catch (Exception ex) {
-            LOG.warn("Processing of take handover failed: {}", ex.getMessage());
+
+            try {
+                final String queryParams = "senderId=" + vistorToken + "&refrenceId=" + ConfigReader.environment.getProperty("backend.refrenced.id", "");
+
+                String messageText = "{\n"
+                        + "    \"event\":\"" + event + "\",\n"
+                        + "    \"aganetName\":\"" + agentName + "\"\n"
+                        + "}";
+                RequestPayload data = new RequestPayload(messageText, "", "RocketChat", Boolean.FALSE, "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
+                RestTemplate restTemplate = new RestTemplate();
+                ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + "/inbound/" + "?" + queryParams, data, String.class);
+            } catch (Exception e) {
+                LOG.error("Error sending message", e);
+
+            }
+
+        } catch (JSONException ex) {
+            LOG.error("Processing of take handover failed ", ex);
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
         return ResponseEntity.status(HttpStatus.OK).build();
