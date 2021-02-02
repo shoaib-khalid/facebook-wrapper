@@ -98,7 +98,7 @@ public class CallbackController {
             @RequestParam(MODE_REQUEST_PARAM_NAME) final String mode,
             @RequestParam(VERIFY_TOKEN_REQUEST_PARAM_NAME) final String verifyToken,
             @RequestParam(CHALLENGE_REQUEST_PARAM_NAME) final String challenge) {
-        LOG.debug(
+        LOG.info(
                 "Received Webhook verification request - mode: {} | verifyToken: {} | challenge: {}",
                 mode,
                 verifyToken,
@@ -124,7 +124,7 @@ public class CallbackController {
     public ResponseEntity<Void> handle(
             @RequestBody final String payload,
             @RequestHeader(SIGNATURE_HEADER_NAME) final String signature) {
-        LOG.debug(
+        LOG.info(
                 "Received Messenger Platform callback - payload: {} | signature: {}", payload, signature);
         try {
             //            LOG.debug("Received Full Payload:" + payload);
