@@ -26,6 +26,7 @@ public class PostbackHandler {
             final String payload = event.payload().orElse("empty payload");
             LOG.debug("payload title: {} payload data: {} event referal: {}", event.title(), payload, event.referral());
             String senderId = event.senderId();
+            final String recipientId = event.recipientId();
             LOG.debug("senderId: {}", senderId);
             final Instant timestamp = event.timestamp();
             LOG.debug("timestamp: {}", timestamp);
@@ -39,7 +40,7 @@ public class PostbackHandler {
             }
             LOG.debug("isGuest: {}", isGuest);
             LOG.info("Received postback for user '{}' and page '{}' with payload '{}' at '{}'", senderId, senderId, payload, timestamp);
-            final String queryParams = "senderId=" + senderId + "&refrenceId=" + ConfigReader.environment.getProperty("backend.refrenced.id", "");
+            final String queryParams = "senderId=" + senderId + "&refrenceId=" + recipientId;
             /* forward to backend for*/ RequestPayload data = new RequestPayload(payload, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);

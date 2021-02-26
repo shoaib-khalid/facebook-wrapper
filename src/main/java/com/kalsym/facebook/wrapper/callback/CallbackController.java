@@ -360,7 +360,7 @@ public class CallbackController {
                         LOG.debug("[{}] [{}] Removed session for user ", refId, senderId);
                     }
                     try {
-                        final String queryParams = "senderId=" + senderId + "&refrenceId=" + ConfigReader.environment.getProperty("backend.refrenced.id", "");
+                        final String queryParams = "senderId=" + senderId + "&refrenceId=" + refId;
 
                         String messageText = "{\n"
                                 + "    \"event\":\"Message\",\n"

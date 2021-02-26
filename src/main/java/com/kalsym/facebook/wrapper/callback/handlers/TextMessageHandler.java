@@ -37,7 +37,10 @@ public class TextMessageHandler {
                 LOG.info("Received message '{}' with text '{}' from user '{}' to user {} at '{}'. To be forwarded to core", messageId, messageText, senderId, recipientId, timestamp);
                 String isGuest = "true";
                 LOG.debug("isGuest: {}", isGuest);
-                final String queryParams = "senderId=" + senderId + "&refrenceId=" + ConfigReader.environment.getProperty("backend.refrenced.id", "");
+
+                final String queryParams = "senderId=" + senderId + "&refrenceId=" + recipientId;
+                LOG.info("queryParams: {}", queryParams);
+
                 /* forward to backend for */
                 RequestPayload data = new RequestPayload(messageText, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
                 RestTemplate restTemplate = new RestTemplate();
