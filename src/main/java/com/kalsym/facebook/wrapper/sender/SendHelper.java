@@ -71,7 +71,7 @@ public class SendHelper {
             MessageResponse res = messenger.send(SenderActionPayload.create(recipientId, SenderAction.MARK_SEEN));
             return res;
         } catch (Exception e) {
-            LOG.error("Message could not be sent. An unexpected error occurred.", e);
+            LOG.error("{} Message could not be sent. An unexpected error occurred. {}", recipientId, e);
             return null;
         }
     }
@@ -101,7 +101,7 @@ public class SendHelper {
             MessageResponse res = messenger.send(MessagePayload.create(recipientId, MessagingType.RESPONSE, message));
             return res;
         } catch (Exception e) {
-            LOG.error("Message could not be sent. An unexpected error occurred.", e);
+            LOG.error("{} Message could not be sent. An unexpected error occurred. {}", recipientId, e);
             return null;
         }
     }
@@ -134,7 +134,7 @@ public class SendHelper {
             final MessagePayload messagePayload = MessagePayload.create(recipient, MessagingType.RESPONSE, textMessage, of(notificationType), empty());
             return messenger.send(messagePayload);
         } catch (Exception e) {
-            LOG.error("Message could not be sent. An unexpected error occurred.", e);
+            LOG.error("{} Message could not be sent. An unexpected error occurred. {}", recipientId, e);
             return null;
         }
     }
@@ -165,12 +165,12 @@ public class SendHelper {
                     = MessagePayload.create(recipientId, MessagingType.RESPONSE, templateMessage);
             return messenger.send(messagePayload);
         } catch (Exception e) {
-            LOG.error("Message could not be sent. An unexpected error occurred.", e);
+            LOG.error("{} Message could not be sent. An unexpected error occurred. {}", recipientId, e);
             return null;
         }
     }
 
-    public static MessageResponse sendGifMessage(Messenger messenger, String recipientId , String mediaUrl)
+    public static MessageResponse sendGifMessage(Messenger messenger, String recipientId, String mediaUrl)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(
@@ -178,21 +178,21 @@ public class SendHelper {
         return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
     }
 
-    public static MessageResponse sendAudioMessage(Messenger messenger, String recipientId , String mediaUrl)
+    public static MessageResponse sendAudioMessage(Messenger messenger, String recipientId, String mediaUrl)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(AUDIO, new URL(mediaUrl));
         return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
     }
 
-    public static MessageResponse sendVideoMessage(Messenger messenger, String recipientId , String mediaUrl)
+    public static MessageResponse sendVideoMessage(Messenger messenger, String recipientId, String mediaUrl)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(VIDEO, new URL(mediaUrl));
         return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
     }
 
-    public static MessageResponse sendFileMessage(Messenger messenger, String recipientId , String mediaUrl)
+    public static MessageResponse sendFileMessage(Messenger messenger, String recipientId, String mediaUrl)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(FILE, new URL(mediaUrl));

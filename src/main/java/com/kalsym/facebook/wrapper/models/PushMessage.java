@@ -31,7 +31,7 @@ public class PushMessage {
 
     @Size(max = 3)
     private List<MenuItem> menuItems;
-    //    private String message;
+    private String message;
     @Size(min = 2, max = 1000)
     private String refId;
 

@@ -1,22 +1,13 @@
 package com.kalsym.facebook.wrapper.handover;
 
-import com.github.messenger4j.Messenger;
-import com.github.messenger4j.handover.HandoverPassThreadControlPayload;
-import com.github.messenger4j.handover.HandoverPayload;
-import com.github.messenger4j.handover.HandoverResponse;
-import com.github.messenger4j.handover.SecondaryReceiversResponse;
-import com.github.messenger4j.handover.ThreadOwnerResponse;
-import com.github.messenger4j.webhook.event.AppRolesEvent;
-import com.github.messenger4j.webhook.event.BaseEventType;
-import com.github.messenger4j.webhook.event.PassThreadControlEvent;
-import com.github.messenger4j.webhook.event.RequestThreadControlEvent;
-import com.github.messenger4j.webhook.event.TakeThreadControlEvent;
+import static com.kalsym.facebook.wrapper.Application.agent_sessions;
 import com.kalsym.facebook.wrapper.config.ConfigReader;
-import java.time.Instant;
-import static java.util.Optional.of;
+import com.kalsym.facebook.wrapper.models.RequestPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -26,167 +17,26 @@ public class HandoverHelper {
 
     private static final Logger LOG = LoggerFactory.getLogger("application");
 
-    /**
-     * Attempts to pass control of recipient conversation to secondary receiver
-     *
-     * @param messenger
-     * @param recipient
-     * @param message
-     * @return
-     */
-    public static HandoverResponse handoverToSecondaryReceiver(Messenger messenger, String recipient, String message) {
-
-        LOG.info("Received handoverToSecondaryReceiver from '{}'", recipient);
-        try {
-            HandoverPayload handoverPayload = HandoverPassThreadControlPayload.create(recipient, ConfigReader.environment.getProperty("secondary_receiver_app_id", "835103589938459"), of(message));
-            HandoverResponse res = messenger.passThreadControl(handoverPayload);
-            LOG.info("{} pass handover response: {}", recipient, res);
-            return res;
-        } catch (Exception ex) {
-            LOG.error("{} Error: {} ", recipient, ex);
-            return null;
-        }
+    public static ResponseEntity<String> passConverationToAgentService(String senderId, String message, String refId) {
+        // put new session ID for this sender
+        agent_sessions.put(senderId, refId);
+        return sendMessageToAgent(senderId, message, refId);
     }
 
-    /**
-     * Attempts to take back control of recipient conversation from secondary
-     * receiver
-     *
-     * @param messenger
-     * @param recipient
-     * @return
-     */
-    public static HandoverResponse takeFromSecondaryReceiver(Messenger messenger, String recipient) {
-        LOG.info("Received takeFromSecondaryReceiver for '{}'", recipient);
-        try {
-            HandoverPayload handoverPayload = HandoverPassThreadControlPayload.create(recipient, ConfigReader.environment.getProperty("secondary_receiver_app_id", "835103589938459"), of("Message from user: handover content"));
+    public static ResponseEntity<String> sendMessageToAgent(String senderId, String message, String refId) throws RestClientException {
+        String handoverServiceUrl = ConfigReader.environment.getProperty("handover.service.url", "127.0.0.1");
+        int handoverServicePort = ConfigReader.getPropertyAsInt("handover.service.port", 8080);
+        String handoverServiceRequestPath = ConfigReader.environment.getProperty("handover.service.request.path", "/inbound/customer/message");
+        LOG.info("[{}] url:{} port:{}  and endpoint:{}", senderId, handoverServiceUrl, handoverServicePort, handoverServiceRequestPath);
+        String isGuest = "true";
+        final String queryParams = "senderId=" + senderId + "&refrenceId=" + refId;
+        /* forward to handover service for */
 
-            HandoverResponse res = messenger.takeThreadControl(handoverPayload);
-            LOG.info("{} take handover response: {}", recipient, res);
-            return res;
-        } catch (Exception ex) {
-            LOG.error("{} Error: {} ", recipient, ex);
-            return null;
-        }
+        RequestPayload data = new RequestPayload(message, "", refId, Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
+        RestTemplate restTemplate = new RestTemplate();
+         LOG.info("[{}] url:{} queryParams:{}  and payload:{}", senderId, queryParams, data.toString());
+       
+        ResponseEntity<String> response = restTemplate.postForEntity("http://" + handoverServiceUrl + ":" + handoverServicePort + handoverServiceRequestPath + "?" + queryParams, data, String.class);
+        return response;
     }
-
-    /**
-     * Queries secondary receivers and current owner of recipient conversation.
-     * And sends as message to user
-     *
-     * @param messenger
-     * @param recipient
-     * @return
-     */
-    public static ThreadOwnerResponse getThreadOwner(Messenger messenger, String recipient) {
-        LOG.debug("Handling getThreadOwner for {}", recipient);
-        try {
-            SecondaryReceiversResponse receivers = messenger.getSecondaryReceivers();
-            LOG.info("{} Secondary receivers: {}", recipient, receivers);
-
-            ThreadOwnerResponse res = messenger.getThreadOwner(recipient);
-            LOG.info("{} get thread owners response: {}", recipient, res);
-
-            return res;
-        } catch (Exception ex) {
-            LOG.error("{} Error: {} ", recipient, ex);
-            return null;
-        }
-    }
-
-    /**
-     *
-     * @param event
-     */
-    public static void handlePassThreadControlEvent(PassThreadControlEvent event) {
-        LOG.debug("Handling PassThreadControlEvent");
-        final String senderId = event.senderId();
-        LOG.debug("senderId: {}", senderId);
-        final BaseEventType baseEventType = event.baseEventType();
-        LOG.debug("baseEventType: {}", baseEventType);
-        final Instant timestamp = event.timestamp();
-        LOG.debug("timestamp: {}", timestamp);
-
-        event.getPassThreadControl().ifPresent(passThreadControl -> {
-            LOG.info(String.format("Now this app has the control. Received -> %s", passThreadControl));
-//            sendTextMessage(event.senderId(), "Hi I'm the App again", true);
-        });
-    }
-
-    /**
-     *
-     * @param event
-     */
-    public static void handleRequestThreadControlEvent(RequestThreadControlEvent event) {
-        LOG.debug("Handling RequestThreadControlEvent");
-        final String senderId = event.senderId();
-        LOG.debug("senderId: {}", senderId);
-        final String recipientId = event.recipientId();
-        LOG.debug("recipientId: {}", recipientId);
-        final BaseEventType baseEventType = event.baseEventType();
-        LOG.debug("baseEventType: {}", baseEventType);
-        final Instant timestamp = event.timestamp();
-        LOG.debug("timestamp: {}", timestamp);
-
-        event.getRequestThreadControl().ifPresent(requestThreadControl -> {
-            /**
-             * is up to you to pass the control to the secondary receiver
-             * messenger.passThreadControl();
-             *
-             */
-
-            LOG.info(String.format("Secondary Receiver requested to this app has the control. Received -> %s", requestThreadControl));
-        });
-
-    }
-
-    /**
-     *
-     * @param event
-     */
-    public static void handleTakeThreadControlEvent(TakeThreadControlEvent event) {
-        LOG.debug("Handling TakeThreadControlEvent");
-        final String senderId = event.senderId();
-        LOG.debug("senderId: {}", senderId);
-        final String recipientId = event.recipientId();
-        LOG.debug("recipientId: {}", recipientId);
-        final BaseEventType baseEventType = event.baseEventType();
-        LOG.debug("baseEventType: {}", baseEventType);
-        final Instant timestamp = event.timestamp();
-        LOG.debug("timestamp: {}", timestamp);
-
-        event.getTakeThreadControl().ifPresent(takeThreadControl -> {
-            /**
-             * is up to you to request again the control to the primary receiver
-             * messenger.requestThreadControl();
-             *
-             */
-            LOG.info(String.format("Primary Receiver has taken away the app control. Received -> %s", takeThreadControl));
-        });
-
-    }
-
-    /**
-     *
-     * @param event
-     */
-    public static void handleAppRolesEvent(AppRolesEvent event) {
-        LOG.debug("Handling AppRolesEvent");
-        final String recipientId = event.recipientId();
-        LOG.debug("recipientId: {}", recipientId);
-        final BaseEventType baseEventType = event.baseEventType();
-        LOG.debug("baseEventType: {}", baseEventType);
-        final Instant timestamp = event.timestamp();
-        LOG.debug("timestamp: {}", timestamp);
-
-        event.getAppRoles().ifPresent(appRoles -> {
-            /**
-             * Triggered when App Roles are changed from Page configuration
-             *
-             */
-            LOG.info(String.format("App Roles updated. Received -> %s", appRoles));
-        });
-
-    }
-
 }

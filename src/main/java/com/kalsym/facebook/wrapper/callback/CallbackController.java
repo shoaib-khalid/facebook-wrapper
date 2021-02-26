@@ -13,7 +13,6 @@ import com.github.messenger4j.common.WebviewHeightRatio;
 import com.github.messenger4j.exception.MessengerApiException;
 import com.github.messenger4j.exception.MessengerIOException;
 import com.github.messenger4j.exception.MessengerVerificationException;
-import com.github.messenger4j.handover.HandoverResponse;
 import com.github.messenger4j.send.MessageResponse;
 import com.github.messenger4j.send.message.template.button.Button;
 import com.github.messenger4j.send.message.template.button.CallButton;
@@ -26,6 +25,7 @@ import com.github.messenger4j.webhook.Event;
 import static com.github.messenger4j.webhook.event.BaseEventType.STANDBY;
 import com.github.messenger4j.webhook.event.QuickReplyMessageEvent;
 import com.github.messenger4j.webhook.event.TextMessageEvent;
+import static com.kalsym.facebook.wrapper.Application.agent_sessions;
 import static com.kalsym.facebook.wrapper.callback.handlers.AccountLinkingHandler.handleAccountLinkingEvent;
 import static com.kalsym.facebook.wrapper.callback.handlers.AttachmentMessageHandler.handleAttachmentMessageEvent;
 import static com.kalsym.facebook.wrapper.callback.handlers.MessageEchoHandler.handleMessageEchoEvent;
@@ -33,8 +33,8 @@ import com.kalsym.facebook.wrapper.callback.handlers.PostbackHandler;
 import com.kalsym.facebook.wrapper.callback.handlers.TextMessageHandler;
 import com.kalsym.facebook.wrapper.config.ConfigReader;
 import com.kalsym.facebook.wrapper.enums.ButtonType;
-import com.kalsym.facebook.wrapper.enums.MediaType;
 import com.kalsym.facebook.wrapper.handover.HandoverHelper;
+import com.kalsym.facebook.wrapper.handover.HandoverHelperFacebook;
 import com.kalsym.facebook.wrapper.models.MenuItem;
 import com.kalsym.facebook.wrapper.models.RequestPayload;
 import com.kalsym.facebook.wrapper.sender.SendHelper;
@@ -42,13 +42,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -128,8 +124,7 @@ public class CallbackController {
                 "Received Messenger Platform callback - payload: {} | signature: {}", payload, signature);
         try {
             //            LOG.debug("Received Full Payload:" + payload);
-            this.messenger.onReceiveEvents(
-                    payload,
+            this.messenger.onReceiveEvents(payload,
                     of(signature),
                     event -> {
 
@@ -155,13 +150,13 @@ public class CallbackController {
                         } else if (event.isReferralEvent()) {
                             handleReferrelEvent(event);
                         } else if (event.isPassThreadControlEvent()) {
-                            HandoverHelper.handlePassThreadControlEvent(event.asPassThreadControlEvent());
+                            HandoverHelperFacebook.handlePassThreadControlEvent(event.asPassThreadControlEvent());
                         } else if (event.isRequestThreadControlEvent()) {
-                            HandoverHelper.handleRequestThreadControlEvent(event.asRequestThreadControlEvent());
+                            HandoverHelperFacebook.handleRequestThreadControlEvent(event.asRequestThreadControlEvent());
                         } else if (event.isTakeThreadControlEvent()) {
-                            HandoverHelper.handleTakeThreadControlEvent(event.asTakeThreadControlEvent());
+                            HandoverHelperFacebook.handleTakeThreadControlEvent(event.asTakeThreadControlEvent());
                         } else if (event.isAppRolesEvent()) {
-                            HandoverHelper.handleAppRolesEvent(event.asAppRolesEvent());
+                            HandoverHelperFacebook.handleAppRolesEvent(event.asAppRolesEvent());
                         } else {
                             handleFallbackEvent(event);
                         }
@@ -182,7 +177,7 @@ public class CallbackController {
      * @return
      */
     @RequestMapping(value = "/textmessage/push/", method = RequestMethod.POST, consumes = "Application/json")
-    public ResponseEntity<Void> pushSimpleMessage(@RequestBody com.kalsym.facebook.wrapper.models.SimpleMessage requestData) {
+    public ResponseEntity<Void> pushSimpleMessage(@RequestBody com.kalsym.facebook.wrapper.models.PushMessage requestData) {
         try {
             LOG.info("[{}] received simple message request [{}] ", requestData.getRefId(), requestData.toString());
             final List<String> recipientIds = requestData.getRecipientIds();
@@ -210,12 +205,12 @@ public class CallbackController {
      * @return
      */
     @RequestMapping(value = "/mediamessage/push/", method = RequestMethod.POST, consumes = "Application/json")
-    public ResponseEntity<Void> pushMediaMessage(@RequestBody com.kalsym.facebook.wrapper.models.MediaMessage requestData) {
+    public ResponseEntity<Void> pushMediaMessage(@RequestBody com.kalsym.facebook.wrapper.models.PushMessage requestData) {
         try {
             LOG.debug("[{}] received media message request [{}] ", requestData.getRefId(), requestData.toString());
             final List<String> recipientIds = requestData.getRecipientIds();
             final String refId = requestData.getRefId();
-            final MediaType mediaType = requestData.getType();
+            final String mediaType = requestData.getUrlType();
             final String mediaUrl = requestData.getUrl();
 
             LOG.info("[{}] received media message request for recipients [{}] with url [{}] of type [{}] ", refId, recipientIds.toString(), mediaUrl, mediaType);
@@ -223,30 +218,27 @@ public class CallbackController {
                 String recipient = (String) recip;
                 try {
                     MessageResponse resp;
-                    switch (mediaType) {
-                        case IMAGE:
-                            resp = SendHelper.sendImageMessage(messenger, recipient, mediaUrl);
-                            LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
-                            break;
-                        case GIF:
-                            resp = SendHelper.sendGifMessage(messenger, recipient, mediaUrl);
-                            LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
-                            break;
-                        case VIDEO:
-                            resp = SendHelper.sendVideoMessage(messenger, recipient, mediaUrl);
-                            LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
-                            break;
-                        case AUDIO:
-                            resp = SendHelper.sendAudioMessage(messenger, recipient, mediaUrl);
-                            LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
-                            break;
-                        case FILE:
-                            resp = SendHelper.sendFileMessage(messenger, recipient, mediaUrl);
-                            LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
-                            break;
-                        default:
-                            LOG.debug("[{}] [{}] unsupported media type [{}]", refId, recipient, mediaType);
 
+                    if ("IMAGE".equalsIgnoreCase(mediaType)) {
+                        resp = SendHelper.sendImageMessage(messenger, recipient, mediaUrl);
+                        LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
+                    } else if ("GIF".equalsIgnoreCase(mediaType)) {
+
+                        resp = SendHelper.sendGifMessage(messenger, recipient, mediaUrl);
+                        LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
+                    } else if ("VIDEO".equalsIgnoreCase(mediaType)) {
+
+                        resp = SendHelper.sendVideoMessage(messenger, recipient, mediaUrl);
+                        LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
+                    } else if ("AUDIO".equalsIgnoreCase(mediaType)) {
+                        resp = SendHelper.sendAudioMessage(messenger, recipient, mediaUrl);
+                        LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
+                    } else if ("FILE".equalsIgnoreCase(mediaType)) {
+
+                        resp = SendHelper.sendFileMessage(messenger, recipient, mediaUrl);
+                        LOG.debug("[{}] pushed media message to [{}] with response [{}]", refId, recipient, resp);
+                    } else {
+                        LOG.debug("[{}] [{}] unsupported media type [{}]", refId, recipient, mediaType);
                     }
 
                 } catch (Exception ex) {
@@ -320,7 +312,7 @@ public class CallbackController {
     }
 
     /**
-     * Callback endpoint for passing conversation control to CS agents portal
+     * Callback endpoint for passing conversation control to agent service
      *
      * @param requestData
      * @return
@@ -328,7 +320,7 @@ public class CallbackController {
     @RequestMapping(value = "/conversation/pass/", method = RequestMethod.POST, consumes = "Application/json")
     public ResponseEntity<Void> passConversationToCustomerService(@RequestBody com.kalsym.facebook.wrapper.models.Conversation requestData) {
         try {
-            LOG.debug("[{}] received pass conversatio control request [{}] ", requestData.getRefId(), requestData.toString());
+            LOG.debug("[{}] received pass conversation control request [{}] ", requestData.getRefId(), requestData.toString());
             final List<String> recipientIds = requestData.getRecipientIds();
             final String refId = requestData.getRefId();
             final String message = requestData.getMessage();
@@ -336,11 +328,12 @@ public class CallbackController {
             LOG.info("[{}] received pass conversation control request for recipients [{}] with message [{}]", refId, recipientIds.toString(), message);
             recipientIds.forEach(recip -> {
                 String recipient = (String) recip;
-                HandoverResponse resp = HandoverHelper.handoverToSecondaryReceiver(messenger, recipient, message);
-                LOG.info("[{}] [{}] handover response [{}]", refId, recipient, resp);
+//                HandoverResponse resp = HandoverHelperFacebook.handoverToSecondaryReceiver(messenger, recipient, message);
+                ResponseEntity<String> resp = HandoverHelper.passConverationToAgentService(recipient, message, refId);
+                LOG.info("[{}] [{}] handover service response [{}]", refId, recipient, resp);
             });
         } catch (Exception ex) {
-            LOG.warn("Processing of pass handover failed: {}", ex.getMessage());
+            LOG.warn("Processing of pass handover failed: {}", ex);
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
         return ResponseEntity.status(HttpStatus.OK).build();
@@ -353,50 +346,37 @@ public class CallbackController {
      * @return
      */
     @RequestMapping(value = "/conversation/handle/", method = RequestMethod.POST, consumes = "Application/json")
-    public ResponseEntity<Void> takeConversationFromCustomerService(@RequestBody String requestData) {
+    public ResponseEntity<Void> takeConversationFromCustomerService(@RequestBody com.kalsym.facebook.wrapper.models.PushMessage requestData) {
         try {
-            LOG.info("requestData: [{}]", requestData);
-
-            JSONObject exitObject = new JSONObject(requestData);
-
-            LOG.info("exitArray: [{}]", exitObject);
-            JSONObject visitorData = exitObject.getJSONObject("visitor");
-            LOG.info("visitorData: [{}]", visitorData);
-            String vistorToken = visitorData.getString("token");
-            LOG.info("vistorToken: [{}]", vistorToken);
-
-            JSONObject agentData = exitObject.getJSONObject("agent");
-            LOG.info("agentData: [{}]", agentData);
-            String agentName = visitorData.getString("name");
-            LOG.info("agentName: [{}]", agentName);
-
-            String event = exitObject.getString("type");
-            LOG.info("event: [{}]", event);
-
-            final List<String> recipientIds = new LinkedList<>();
-            recipientIds.add(vistorToken);
-            //final String refId = requestData.getRefId();
-
-            LOG.info("received take conversation control request for recipients [{}]", recipientIds.toString());
-            recipientIds.forEach(recip -> {
-                String recipient = (String) recip;
-                HandoverResponse resp = HandoverHelper.takeFromSecondaryReceiver(messenger, recipient);
-                LOG.info("[{}] take handover response [{}]", recipient, resp);
-            });
-
             try {
-                final String queryParams = "senderId=" + vistorToken + "&refrenceId=" + ConfigReader.environment.getProperty("backend.refrenced.id", "");
+                LOG.info("[{}] received conversation handle request [{}] ", requestData.getRefId(), requestData.toString());
+                final List<String> recipientIds = requestData.getRecipientIds();
+                final String refId = requestData.getRefId();
+                final String message = requestData.getMessage();
+                LOG.debug("[{}] received conversation handle request for recipients [{}] with message [{}] ", refId, recipientIds.toString(), message);
+                recipientIds.forEach(senderId -> {
+                    if (agent_sessions.containsKey(senderId)) {
+                        agent_sessions.remove(senderId);
+                        LOG.debug("[{}] [{}] Removed session for user ", refId, senderId);
+                    }
+                    try {
+                        final String queryParams = "senderId=" + senderId + "&refrenceId=" + ConfigReader.environment.getProperty("backend.refrenced.id", "");
 
-                String messageText = "{\n"
-                        + "    \"event\":\"" + event + "\",\n"
-                        + "    \"aganetName\":\"" + agentName + "\"\n"
-                        + "}";
-                RequestPayload data = new RequestPayload(messageText, "", "RocketChat", Boolean.FALSE, "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
-                RestTemplate restTemplate = new RestTemplate();
-                ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + "/inbound/" + "?" + queryParams, data, String.class);
-            } catch (Exception e) {
-                LOG.error("Error sending message", e);
-
+                        String messageText = "{\n"
+                                + "    \"event\":\"Message\",\n"
+                                + "    \"agentName\":\"" + requestData.getTitle() + "\"\n"
+                                + "}";
+                        RequestPayload data = new RequestPayload(messageText, requestData.getMessage(), "RocketChat", Boolean.FALSE, "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
+                        RestTemplate restTemplate = new RestTemplate();
+                        ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + "/inbound/" + "?" + queryParams, data, String.class);
+                        LOG.info("[{}] [{}] sent message  to core", refId, senderId, data);
+                        LOG.info("[{}] [{}] response from core: ", refId, senderId, response);
+                    } catch (Exception e) {
+                        LOG.error("Error sending message to core", e);
+                    }
+                });
+            } catch (Exception ex) {
+                LOG.warn("Processing of push simple message failed: {}", ex.getMessage());
             }
 
         } catch (JSONException ex) {
@@ -454,13 +434,13 @@ public class CallbackController {
                         SendHelper.sendAccountLinking(messenger, senderId);
                         break;
                     case "handover": //
-                        HandoverHelper.handoverToSecondaryReceiver(messenger, senderId, "Message from user: handover content");
+                        HandoverHelperFacebook.handoverToSecondaryReceiver(messenger, senderId, "Message from user: handover content");
                         break;
                     case "takeback": //
-                        HandoverHelper.takeFromSecondaryReceiver(messenger, senderId);
+                        HandoverHelperFacebook.takeFromSecondaryReceiver(messenger, senderId);
                         break;
                     case "getowner": //
-                        HandoverHelper.getThreadOwner(messenger, senderId);
+                        HandoverHelperFacebook.getThreadOwner(messenger, senderId);
                         break;
                     default:
                         SendHelper.sendTextMessage(messenger, senderId, messageText, true);
@@ -474,10 +454,10 @@ public class CallbackController {
             // message received in standby, do 
             switch (messageText.toLowerCase()) {
                 case "takeback": //
-                    HandoverHelper.takeFromSecondaryReceiver(messenger, senderId);
+                    HandoverHelperFacebook.takeFromSecondaryReceiver(messenger, senderId);
                     break;
                 case "getowner": //
-                    HandoverHelper.getThreadOwner(messenger, senderId);
+                    HandoverHelperFacebook.getThreadOwner(messenger, senderId);
                     break;
                 default:
                     LOG.debug("{} message is {} in STANDBY mode, ignore", senderId, messageText);
