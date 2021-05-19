@@ -129,7 +129,7 @@ public class CallbackController {
                     event -> {
 
                         if (event.isTextMessageEvent()) {
-//                            handleTextMessageEvent(event.asTextMessageEvent());
+//                            handleTextMessageEventTest1(event.asTextMessageEvent());
                             TextMessageHandler.handleTextMessageEvent(messenger, event.asTextMessageEvent());
                         } else if (event.isAttachmentMessageEvent()) {
                             handleAttachmentMessageEvent(event.asAttachmentMessageEvent());
