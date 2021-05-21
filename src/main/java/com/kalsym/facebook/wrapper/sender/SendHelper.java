@@ -35,8 +35,10 @@ import com.github.messenger4j.send.recipient.IdRecipient;
 import com.github.messenger4j.send.recipient.Recipient;
 import com.github.messenger4j.send.recipient.UserRefRecipient;
 import com.github.messenger4j.send.senderaction.SenderAction;
+import com.github.messenger4j.spi.MessengerHttpClient;
 import com.github.messenger4j.userprofile.UserProfile;
 import com.kalsym.facebook.wrapper.config.ConfigReader;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Instant;
@@ -45,6 +47,7 @@ import java.util.Arrays;
 import java.util.List;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
+import java.util.logging.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -115,9 +118,10 @@ public class SendHelper {
      * @param isGuest if isGuest is true,recipient will be created as
      * IdRecipient, else it will be created as UserRefRecipient before sending
      * message to messenger API
+     * @param referenceToken
      * @return
      */
-    public static MessageResponse sendTextMessage(Messenger messenger, String recipientId, String text, boolean isGuest) {
+    public static MessengerHttpClient.HttpResponse sendTextMessage(Messenger messenger, String recipientId, String text, boolean isGuest, String referenceToken) {
 
         try {
             Recipient recipient;
@@ -130,12 +134,18 @@ public class SendHelper {
             final NotificationType notificationType = NotificationType.REGULAR;
             final String metadata = "ZEE";
 
-            final TextMessage textMessage = TextMessage.create(text, empty(), of(metadata));
-            final MessagePayload messagePayload = MessagePayload.create(recipient, MessagingType.RESPONSE, textMessage, of(notificationType), empty());
-            return messenger.send(messagePayload);
+//            final TextMessage textMessage = TextMessage.create(text, empty(), of(metadata));
+            final TextMessage textMessageWithGraph = TextMessage.create(text, empty(), of(metadata));
+
+//            final MessagePayload messagePayload = MessagePayload.create(recipient, MessagingType.RESPONSE, textMessage, of(notificationType), empty());
+            final MessagePayload messagePayloadWithGraph = MessagePayload.create(recipient, MessagingType.RESPONSE, textMessageWithGraph, of(notificationType), empty());
+            GraphApiSender gSender = new GraphApiSender(referenceToken);
+            MessengerHttpClient.HttpResponse response = gSender.sendMessage(messagePayloadWithGraph);
+            return response;
+//            return messenger.send(messagePayload);
         } catch (Exception e) {
             LOG.error("{} Message could not be sent. An unexpected error occurred. {}", recipientId, e);
-            return null;
+            return new MessengerHttpClient.HttpResponse(-1, "Exception:" + e);
         }
     }
 
@@ -170,58 +180,65 @@ public class SendHelper {
         }
     }
 
-    public static MessageResponse sendGifMessage(Messenger messenger, String recipientId, String mediaUrl)
+    public static MessengerHttpClient.HttpResponse sendGifMessage(Messenger messenger, String recipientId, String mediaUrl, String referenceToken)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(
                         IMAGE, new URL(mediaUrl));
-        return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
+        return sendRichMediaMessage(messenger, recipientId, richMediaAsset, referenceToken);
     }
 
-    public static MessageResponse sendAudioMessage(Messenger messenger, String recipientId, String mediaUrl)
+    public static MessengerHttpClient.HttpResponse sendAudioMessage(Messenger messenger, String recipientId, String mediaUrl, String referenceToken)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(AUDIO, new URL(mediaUrl));
-        return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
+        return sendRichMediaMessage(messenger, recipientId, richMediaAsset, referenceToken);
     }
 
-    public static MessageResponse sendVideoMessage(Messenger messenger, String recipientId, String mediaUrl)
+    public static MessengerHttpClient.HttpResponse sendVideoMessage(Messenger messenger, String recipientId, String mediaUrl, String referenceToken)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(VIDEO, new URL(mediaUrl));
-        return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
+        return sendRichMediaMessage(messenger, recipientId, richMediaAsset, referenceToken);
     }
 
-    public static MessageResponse sendFileMessage(Messenger messenger, String recipientId, String mediaUrl)
+    public static MessengerHttpClient.HttpResponse sendFileMessage(Messenger messenger, String recipientId, String mediaUrl, String referenceToken)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(FILE, new URL(mediaUrl));
-        return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
+        return sendRichMediaMessage(messenger, recipientId, richMediaAsset, referenceToken);
     }
 
-    public static MessageResponse sendUserDetails(Messenger messenger, String recipientId)
-            throws MessengerApiException, MessengerIOException {
-        final UserProfile userProfile = messenger.queryUserProfile(recipientId);
-        LOG.info("User Profile Picture: {}", userProfile.profilePicture());
-
-        return sendTextMessage(messenger, recipientId, String.format("Your name is %s and you are %s", userProfile.firstName(), userProfile.gender()), true);
-
-    }
-
-    public static MessageResponse sendImageMessage(Messenger messenger, String recipientId, String mediaUrl)
+//    public static MessageResponse sendUserDetails(Messenger messenger, String recipientId)
+//            throws MessengerApiException, MessengerIOException {
+//        final UserProfile userProfile = messenger.queryUserProfile(recipientId);
+//        LOG.info("User Profile Picture: {}", userProfile.profilePicture());
+//
+//        return sendTextMessage(messenger, recipientId, String.format("Your name is %s and you are %s", userProfile.firstName(), userProfile.gender()), true);
+//
+//    }
+    public static MessengerHttpClient.HttpResponse sendImageMessage(Messenger messenger, String recipientId, String mediaUrl, String referenceToken)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
         final UrlRichMediaAsset richMediaAsset
                 = UrlRichMediaAsset.create(IMAGE, new URL(mediaUrl));
 
-        return sendRichMediaMessage(messenger, recipientId, richMediaAsset);
+        return sendRichMediaMessage(messenger, recipientId, richMediaAsset, referenceToken);
     }
 
-    public static MessageResponse sendRichMediaMessage(Messenger messenger, String recipientId, UrlRichMediaAsset richMediaAsset)
+    public static MessengerHttpClient.HttpResponse sendRichMediaMessage(Messenger messenger, String recipientId, UrlRichMediaAsset richMediaAsset, String referenceToken)
             throws MessengerApiException, MessengerIOException {
         final RichMediaMessage richMediaMessage = RichMediaMessage.create(richMediaAsset);
         final MessagePayload messagePayload
                 = MessagePayload.create(recipientId, MessagingType.RESPONSE, richMediaMessage);
-        return messenger.send(messagePayload);
+        GraphApiSender gSender = new GraphApiSender(referenceToken);
+        MessengerHttpClient.HttpResponse response = null;
+        try {
+            response = gSender.sendMessage(messagePayload);
+        } catch (IOException ex) {
+            return new MessengerHttpClient.HttpResponse(-1, "Exception:" + ex);
+        }
+        return response;
+//        return messenger.send(messagePayload);
     }
 
     public static MessageResponse sendTypingOn(Messenger messenger, String recipientId) throws MessengerApiException, MessengerIOException {
@@ -233,8 +250,8 @@ public class SendHelper {
         return messenger.send(SenderActionPayload.create(recipientId, SenderAction.TYPING_OFF));
     }
 
-    public static MessageResponse sendMenuMessage(Messenger messenger,
-            Recipient recipientId, String title, String subTitle, String url, List<Button> buttons)
+    public static MessengerHttpClient.HttpResponse sendMenuMessage(Messenger messenger,
+            Recipient recipientId, String title, String subTitle, String url, List<Button> buttons, String referenceToken)
             throws MessengerApiException, MessengerIOException, MalformedURLException {
 
         final List<Element> elements = new ArrayList<>();
@@ -247,7 +264,15 @@ public class SendHelper {
         final TemplateMessage templateMessage = TemplateMessage.create(genericTemplate);
         final MessagePayload messagePayload
                 = MessagePayload.create(recipientId, MessagingType.RESPONSE, templateMessage);
-        return messenger.send(messagePayload);
+        GraphApiSender gSender = new GraphApiSender(referenceToken);
+        MessengerHttpClient.HttpResponse response;
+        try {
+            response = gSender.sendMessage(messagePayload);
+        } catch (IOException ex) {
+            return new MessengerHttpClient.HttpResponse(-1, "Exception:" + ex);
+        }
+        return response;
+//        return messenger.send(messagePayload);
     }
 
     public static MessageResponse sendGenericMessage(Messenger messenger, String recipientId)

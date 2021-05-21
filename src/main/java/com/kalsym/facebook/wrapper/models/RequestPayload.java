@@ -18,13 +18,15 @@ public class RequestPayload {
     private String msgId;
     private Boolean isGuest;
     private String callbackUrl;
+    private String referenceId;
 
-    public RequestPayload(String data, String referral, String msgId, Boolean isGuest, String callbackUrl) {
+    public RequestPayload(String data, String referral, String msgId, Boolean isGuest, String callbackUrl,String referenceId) {
         this.data = data;
         this.referral = referral;
         this.msgId = msgId;
         this.isGuest = isGuest;
         this.callbackUrl = callbackUrl;
+        this.referenceId = referenceId;
     }
 
 }

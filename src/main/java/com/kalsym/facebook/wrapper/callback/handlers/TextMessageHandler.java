@@ -42,7 +42,7 @@ public class TextMessageHandler {
                 LOG.info("queryParams: {}", queryParams);
 
                 /* forward to backend for */
-                RequestPayload data = new RequestPayload(messageText, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/");
+                RequestPayload data = new RequestPayload(messageText, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/",recipientId);
                 RestTemplate restTemplate = new RestTemplate();
                 ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + "/inbound/" + "?" + queryParams, data, String.class);
                 LOG.info("{} Response from core:{}", senderId, response);
@@ -51,7 +51,7 @@ public class TextMessageHandler {
             } else {
                 // conversation session exists with agent.  pass message to agent
                 LOG.info("Received message '{}' with text '{}' from user '{}' to user {} at '{}'. To be forwarded to handover service", messageId, messageText, senderId, recipientId, timestamp);
-                ResponseEntity<String> resp = HandoverHelper.sendMessageToAgent(senderId, messageText, agent_sessions.get(senderId));
+                ResponseEntity<String> resp = HandoverHelper.sendMessageToAgent(senderId, messageText, agent_sessions.get(senderId),recipientId);
                 LOG.info("[{}] handover service response [{}] ", senderId, resp);
                 // message received in standby
 //                switch (messageText.toLowerCase()) {
