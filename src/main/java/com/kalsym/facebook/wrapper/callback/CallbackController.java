@@ -1,6 +1,5 @@
 package com.kalsym.facebook.wrapper.callback;
 
-import com.kalsym.facebook.wrapper.models.*;
 import static com.github.messenger4j.Messenger.CHALLENGE_REQUEST_PARAM_NAME;
 import static com.github.messenger4j.Messenger.MODE_REQUEST_PARAM_NAME;
 import static com.github.messenger4j.Messenger.SIGNATURE_HEADER_NAME;
@@ -14,7 +13,6 @@ import com.github.messenger4j.common.WebviewHeightRatio;
 import com.github.messenger4j.exception.MessengerApiException;
 import com.github.messenger4j.exception.MessengerIOException;
 import com.github.messenger4j.exception.MessengerVerificationException;
-import com.github.messenger4j.send.MessageResponse;
 import com.github.messenger4j.send.message.template.button.Button;
 import com.github.messenger4j.send.message.template.button.CallButton;
 import com.github.messenger4j.send.message.template.button.PostbackButton;
@@ -39,15 +37,18 @@ import com.kalsym.facebook.wrapper.handover.HandoverHelper;
 import com.kalsym.facebook.wrapper.handover.HandoverHelperFacebook;
 import com.kalsym.facebook.wrapper.models.MenuItem;
 import com.kalsym.facebook.wrapper.models.RequestPayload;
+import com.kalsym.facebook.wrapper.models.FbWrapperSession;
 import com.kalsym.facebook.wrapper.repository.AppTokenRepository;
+import com.kalsym.facebook.wrapper.repository.FbWrapperSessionRepository;
 import com.kalsym.facebook.wrapper.sender.SendHelper;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.slf4j.Logger;
@@ -56,13 +57,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -80,6 +79,9 @@ public class CallbackController {
 
     @Autowired
     private AppTokenRepository appTokenRepository;
+
+    @Autowired
+    private FbWrapperSessionRepository fbWrapperSessionRepository;
 
     @Autowired
     public CallbackController(final Messenger messenger) {
@@ -133,7 +135,6 @@ public class CallbackController {
         LOG.info(
                 "Received Messenger Platform callback - payload: {} | signature: {}", payload, signature);
         try {
-            //            LOG.debug("Received Full Payload:" + payload);
             this.messenger.onReceiveEvents(payload,
                     of(signature),
                     event -> {
@@ -204,6 +205,11 @@ public class CallbackController {
                 }
                 MessengerHttpClient.HttpResponse resp = SendHelper.sendTextMessage(messenger, recipient, message, requestData.isGuest(), refToken);
                 LOG.debug("[{}] pushed message to [{}] with response [{}:{}]", refId, recipient, resp.statusCode(), resp.body());
+                if (agent_sessions.containsKey(recip)) {
+
+                    fbWrapperSessionRepository.deleteById(recip);
+                    LOG.info("[{}] [{}] Removed fb wrapper session from database  ", refId, recip);
+                }
             });
         } catch (Exception ex) {
             LOG.warn("Processing of push simple message failed: {}", ex.getMessage());
@@ -260,7 +266,11 @@ public class CallbackController {
                     } else {
                         LOG.debug("[{}] [{}] unsupported media type [{}]", refId, recipient, mediaType);
                     }
+                    if (agent_sessions.containsKey(recip)) {
 
+                        fbWrapperSessionRepository.deleteById(recip);
+                        LOG.info("[{}] [{}] Removed fb wrapper session from database  ", refId, recip);
+                    }
                 } catch (Exception ex) {
                     LOG.warn("Processing of push media message failed: {}", ex.getMessage());
                 }
@@ -327,6 +337,11 @@ public class CallbackController {
                     }
                     resp = SendHelper.sendMenuMessage(messenger, recipient, title, subTitle, url, buttons, refToken);
                     LOG.debug("[{}] pushed media message to [{}] with response [{}:{}]", refId, recipient, resp.statusCode(), resp.body());
+                    if (agent_sessions.containsKey(recip)) {
+
+                        fbWrapperSessionRepository.deleteById(recip);
+                        LOG.info("[{}] [{}] Removed fb wrapper session from database  ", refId, recip);
+                    }
                 } catch (MessengerApiException | MessengerIOException | MalformedURLException ex) {
                     LOG.error("[{}][{}] exception sending menu message [{}]", refId, recipient, ex);
                 } catch (IOException ex) {
@@ -361,6 +376,11 @@ public class CallbackController {
 //                HandoverResponse resp = HandoverHelperFacebook.handoverToSecondaryReceiver(messenger, recipient, message);
                 ResponseEntity<String> resp = HandoverHelper.passConverationToAgentService(recipient, message, refId, referenceId);
                 LOG.info("[{}] [{}] handover service response [{}]", refId, recipient, resp);
+                Timestamp ts= new Timestamp(System.currentTimeMillis());
+                FbWrapperSession fbwSession = new FbWrapperSession(recipient, ts);
+                fbWrapperSessionRepository.save(fbwSession);
+                LOG.info("[{}] [{}] Saved fb wrapper session in database  ", refId, recipient);
+
             });
         } catch (Exception ex) {
             LOG.warn("Processing of pass handover failed: {}", ex);
@@ -390,6 +410,8 @@ public class CallbackController {
                         agent_sessions.remove(senderId);
                         LOG.debug("[{}] [{}] Removed session for user ", refId, senderId);
                     }
+                    fbWrapperSessionRepository.deleteById(senderId);
+                    LOG.info("[{}] [{}] Removed fb wrapper session from database  ", refId, senderId);
                     try {
                         final String queryParams = "senderId=" + senderId + "&refrenceId=" + refId;
 

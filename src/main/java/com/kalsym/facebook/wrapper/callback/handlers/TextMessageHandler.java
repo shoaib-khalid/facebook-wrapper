@@ -5,8 +5,10 @@ import com.github.messenger4j.webhook.event.TextMessageEvent;
 import static com.kalsym.facebook.wrapper.Application.agent_sessions;
 import com.kalsym.facebook.wrapper.config.ConfigReader;
 import com.kalsym.facebook.wrapper.handover.HandoverHelper;
+import com.kalsym.facebook.wrapper.models.FbWrapperSession;
 import com.kalsym.facebook.wrapper.models.RequestPayload;
 import java.time.Instant;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -53,6 +55,9 @@ public class TextMessageHandler {
                 LOG.info("Received message '{}' with text '{}' from user '{}' to user {} at '{}'. To be forwarded to handover service", messageId, messageText, senderId, recipientId, timestamp);
                 ResponseEntity<String> resp = HandoverHelper.sendMessageToAgent(senderId, messageText, agent_sessions.get(senderId),recipientId);
                 LOG.info("[{}] handover service response [{}] ", senderId, resp);
+//                FbWrapperSession fbwSession = new FbWrapperSession(senderId, new Date());
+//                fbWrapperSessionRepository.save(fbwSession);
+//                LOG.info("[{}] [{}] Saved fb wrapper session in database  ", refId, recipient);
                 // message received in standby
 //                switch (messageText.toLowerCase()) {
 //                    case "takeback": //
