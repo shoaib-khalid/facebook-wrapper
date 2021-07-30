@@ -86,12 +86,16 @@
             <version>5.3.4</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
             <id>kalsym-internal-repository-group</id>
             <name>Kalsym Internal Maven Repository Group</name>
-            <url>http://209.58.160.107/kalsym-repo/</url>
+            <url>https://artifact.kalsym.com/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
