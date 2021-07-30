@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kalsym</groupId>
-    <artifactId>facebook.wrapper</artifactId>
+    <artifactId>facebook-wrapper</artifactId>
     <version>0.0.5-MVP</version>
     <name>facebook-wrapper</name>
     <description>Messenger interface to receive requests from facebook messenger</description>
