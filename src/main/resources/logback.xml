@@ -1,10 +1,10 @@
 <configuration>
     <appender name="CDRAPPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/var/kalsym/logs/CallManager/cdr/cdr.txt</file>
+        <file>cdr.txt</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/var/kalsym/logs/CallManager/cdr/cdr.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <fileNamePattern>cdr.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
@@ -21,11 +21,11 @@
         </encoder>
     </appender>
     <appender name="WDAPPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/var/kalsym/logs/CallManager/wd/wd.txt</file>
+        <file>wd.txt</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/var/kalsym/logs/CallManager/wd/wd.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <fileNamePattern>wd.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
@@ -43,11 +43,11 @@
     </appender>
     <appender name="APPLICATION"
                   class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/var/kalsym/logs/CallManager/log.txt</file>
+        <file>log.txt</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/var/kalsym/logs/CallManager/log.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <fileNamePattern>log.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
