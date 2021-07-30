@@ -87,7 +87,22 @@
             <type>jar</type>
         </dependency>
     </dependencies>
-
+    <repositories>
+        <repository>
+            <id>kalsym-internal-repository-group</id>
+            <name>Kalsym Internal Maven Repository Group</name>
+            <url>http://209.58.160.107/kalsym-repo/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>

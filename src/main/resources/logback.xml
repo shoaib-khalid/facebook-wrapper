@@ -1,0 +1,88 @@
+<configuration>
+    <appender name="CDRAPPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/kalsym/logs/CallManager/cdr/cdr.txt</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/var/kalsym/logs/CallManager/cdr/cdr.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <charset>UTF-8</charset>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>%d,%m %n</Pattern>
+            </layout>
+        </encoder>
+    </appender>
+    <appender name="WDAPPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/kalsym/logs/CallManager/wd/wd.txt</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/var/kalsym/logs/CallManager/wd/wd.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <charset>UTF-8</charset>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>%d,%m %n</Pattern>
+            </layout>
+        </encoder>
+    </appender>
+    <appender name="APPLICATION"
+                  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/kalsym/logs/CallManager/log.txt</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/var/kalsym/logs/CallManager/log.%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <charset>UTF-8</charset>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>%p %d [%t] %L - %m%n</Pattern>
+            </layout>
+        </encoder>
+    </appender>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%p %d [%t] %L - %m%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="Logger">
+        <level value="debug" />
+    </logger>
+    <logger name="cdrs" level="DEBUG" additivity="true">
+        <appender-ref ref="CDRAPPENDER"/>
+    </logger>
+    <logger name="wd" level="DEBUG" additivity="true">
+        <appender-ref ref="WDAPPENDER"/>
+    </logger>
+    <logger name="application" level="DEBUG" additivity="true">
+        <appender-ref ref="APPLICATION"/>
+    </logger>
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+    </root>
+</configuration>
