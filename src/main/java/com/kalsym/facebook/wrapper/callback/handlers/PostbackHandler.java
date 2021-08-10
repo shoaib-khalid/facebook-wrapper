@@ -41,7 +41,7 @@ public class PostbackHandler {
             LOG.debug("isGuest: {}", isGuest);
             LOG.info("Received postback for user '{}' and page '{}' with payload '{}' at '{}'", senderId, senderId, payload, timestamp);
             final String queryParams = "senderId=" + senderId + "&refrenceId=" + recipientId;
-            /* forward to backend for*/ RequestPayload data = new RequestPayload(payload, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/",recipientId);
+            /* forward to backend for*/ RequestPayload data = new RequestPayload(payload, "", timestamp.toString(), Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.url", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/",recipientId);
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             RestTemplate restTemplate = new RestTemplate();

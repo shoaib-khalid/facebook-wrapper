@@ -1,0 +1,19 @@
+INFO 2021-08-03 15:45:34,460 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-03 15:55:11,627 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-03 16:00:00,012 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-03 16:00:00,411 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Tue Aug 03 15:50:00 PKT 2021
+INFO 2021-08-03 16:00:00,411 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions

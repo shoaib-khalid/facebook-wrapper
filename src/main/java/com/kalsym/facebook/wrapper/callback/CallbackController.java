@@ -419,7 +419,7 @@ public class CallbackController {
                                 + "    \"event\":\"Message\",\n"
                                 + "    \"agentName\":\"" + requestData.getTitle() + "\"\n"
                                 + "}";
-                        RequestPayload data = new RequestPayload(messageText, requestData.getMessage(), "RocketChat", Boolean.FALSE, "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/", referenceId);
+                        RequestPayload data = new RequestPayload(messageText, requestData.getMessage(), "RocketChat", Boolean.FALSE, "http://" + ConfigReader.environment.getProperty("server.url", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/", referenceId);
                         RestTemplate restTemplate = new RestTemplate();
                         ResponseEntity<String> response = restTemplate.postForEntity("http://" + ConfigReader.environment.getProperty("backend.ip", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("backend.port", "8080") + "/inbound/" + "?" + queryParams, data, String.class);
                         LOG.info("[{}] [{}] sent message  to core", refId, senderId, data);

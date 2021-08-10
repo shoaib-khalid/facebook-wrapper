@@ -32,7 +32,7 @@ public class HandoverHelper {
         final String queryParams = "senderId=" + senderId + "&refrenceId=" + refId;
         /* forward to handover service for */
 
-        RequestPayload data = new RequestPayload(message, "", refId, Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.address", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/",referenceId);
+        RequestPayload data = new RequestPayload(message, "", refId, Boolean.parseBoolean(isGuest), "http://" + ConfigReader.environment.getProperty("server.url", "127.0.0.1") + ":" + ConfigReader.environment.getProperty("server.port", "8080") + "/",referenceId);
         RestTemplate restTemplate = new RestTemplate();
         LOG.info("[{}] url:{} queryParams:{}  and payload:{}", senderId, queryParams, data.toString());
 
