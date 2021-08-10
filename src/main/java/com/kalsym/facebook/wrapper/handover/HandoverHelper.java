@@ -25,7 +25,7 @@ public class HandoverHelper {
 
     public static ResponseEntity<String> sendMessageToAgent(String senderId, String message, String refId, String referenceId) throws RestClientException {
         String handoverServiceUrl = ConfigReader.environment.getProperty("handover.service.url", "127.0.0.1");
-        int handoverServicePort = ConfigReader.getPropertyAsInt("handover.service.port", 8080);
+        int handoverServicePort = ConfigReader.getPropertyAsInt("handover.service.portt", 8080);
         String handoverServiceRequestPath = ConfigReader.environment.getProperty("handover.service.request.path", "/inbound/customer/message");
         LOG.info("[{}] url:{} port:{}  and endpoint:{}", senderId, handoverServiceUrl, handoverServicePort, handoverServiceRequestPath);
         String isGuest = "true";
