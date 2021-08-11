@@ -1,6 +1,6 @@
 package com.kalsym.facebook.wrapper.repository;
 
-import com.kalsym.facebook.wrapper.models.*;
+import com.kalsym.facebook.wrapper.models.FbWrapperSession;
 import java.sql.Timestamp;
 import java.util.Date;
 

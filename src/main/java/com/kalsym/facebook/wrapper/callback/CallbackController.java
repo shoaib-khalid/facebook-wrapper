@@ -376,7 +376,7 @@ public class CallbackController {
 //                HandoverResponse resp = HandoverHelperFacebook.handoverToSecondaryReceiver(messenger, recipient, message);
                 ResponseEntity<String> resp = HandoverHelper.passConverationToAgentService(recipient, message, refId, referenceId);
                 LOG.info("[{}] [{}] handover service response [{}]", refId, recipient, resp);
-                Timestamp ts= new Timestamp(System.currentTimeMillis());
+                Timestamp ts = new Timestamp(System.currentTimeMillis());
                 FbWrapperSession fbwSession = new FbWrapperSession(recipient, ts);
                 fbWrapperSessionRepository.save(fbwSession);
                 LOG.info("[{}] [{}] Saved fb wrapper session in database  ", refId, recipient);
@@ -410,8 +410,12 @@ public class CallbackController {
                         agent_sessions.remove(senderId);
                         LOG.debug("[{}] [{}] Removed session for user ", refId, senderId);
                     }
-                    fbWrapperSessionRepository.deleteById(senderId);
-                    LOG.info("[{}] [{}] Removed fb wrapper session from database  ", refId, senderId);
+                    try {
+                        fbWrapperSessionRepository.deleteById(senderId);
+                        LOG.info("[{}] [{}] Removed fb wrapper session from database  ", refId, senderId);
+                    } catch (Exception ex) {
+                         LOG.error("Error sending message to core", ex);
+                    }
                     try {
                         final String queryParams = "senderId=" + senderId + "&refrenceId=" + refId;
 
