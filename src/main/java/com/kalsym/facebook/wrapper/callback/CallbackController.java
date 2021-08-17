@@ -332,7 +332,7 @@ public class CallbackController {
                 try {
                     String refToken = appTokenRepository.getAppToken(requestData.getReferenceId());
                     if (null == requestData.getReferenceId() || null == refToken || refToken.isEmpty()) {
-                        LOG.info("[{}] token empty from database for referenceId [[]], using default property messenger.pageAccessToken", refId, requestData.getReferenceId());
+                        LOG.info("[{}] token empty from database for referenceId [{}], using default property messenger.pageAccessToken", refId, requestData.getReferenceId());
                         refToken = env.getProperty("messenger.pageAccessToken");
                     }
                     resp = SendHelper.sendMenuMessage(messenger, recipient, title, subTitle, url, buttons, refToken);
