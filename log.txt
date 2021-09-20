@@ -1,24 +1,15 @@
-INFO 2021-08-10 16:35:24,672 [main] 53 - [v0.0.5-MVP][] 
-                                               
-,--. ,--.        ,--.                          
-|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
-|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
-|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
-`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
-                           `---'                :: com.kalsym ::              (v0.0.5-MVP)
-INFO 2021-08-10 16:37:10,876 [main] 53 - [v0.0.6-MVP][] 
-                                               
-,--. ,--.        ,--.                          
-|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
-|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
-|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
-`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
-                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
-INFO 2021-08-10 16:43:39,813 [main] 53 - [v0.0.6-MVP][] 
-                                               
-,--. ,--.        ,--.                          
-|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
-|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
-|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
-`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
-                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
+INFO 2021-08-30 09:24:21,860 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-30 09:24:22,766 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Mon Aug 30 09:14:22 PKT 2021
+INFO 2021-08-30 09:24:22,767 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-30 09:30:00,001 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-30 09:30:00,009 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Mon Aug 30 09:20:00 PKT 2021
+INFO 2021-08-30 09:30:00,010 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-30 09:40:00,004 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-30 09:40:00,012 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Mon Aug 30 09:30:00 PKT 2021
+INFO 2021-08-30 09:40:00,013 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-30 09:50:00,011 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-30 09:50:00,029 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Mon Aug 30 09:40:00 PKT 2021
+INFO 2021-08-30 09:50:00,030 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-30 10:00:00,013 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-30 10:00:00,020 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Mon Aug 30 09:50:00 PKT 2021
+INFO 2021-08-30 10:00:00,021 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions

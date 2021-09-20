@@ -1,0 +1,18 @@
+INFO 2021-08-29 09:50:01,093 [main] 53 - [v0.0.6-MVP][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
+INFO 2021-08-29 09:54:24,526 [http-nio-3001-exec-1] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 1126737119
+INFO 2021-08-29 10:00:00,002 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-29 10:00:00,566 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sun Aug 29 09:50:00 PKT 2021
+INFO 2021-08-29 10:00:00,725 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-29 10:10:00,005 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-29 10:10:00,018 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sun Aug 29 10:00:00 PKT 2021
+INFO 2021-08-29 10:10:00,019 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-29 10:20:00,010 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-29 10:20:00,022 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sun Aug 29 10:10:00 PKT 2021
+INFO 2021-08-29 10:20:00,023 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions

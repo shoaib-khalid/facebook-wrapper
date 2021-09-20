@@ -1,0 +1,430 @@
+INFO 2021-08-28 18:31:57,041 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 18:40:00,004 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 18:40:00,512 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 18:30:00 PKT 2021
+INFO 2021-08-28 18:40:00,512 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 18:44:45,973 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 18:49:32,198 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 18:50:00,012 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 18:50:00,523 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 18:40:00 PKT 2021
+INFO 2021-08-28 18:50:00,524 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:00:00,001 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 19:00:00,012 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 18:50:00 PKT 2021
+INFO 2021-08-28 19:00:00,013 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:03:58,575 [http-nio-3001-exec-1] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 274795571
+INFO 2021-08-28 19:05:15,238 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 19:10:00,012 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 19:10:00,664 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 19:00:00 PKT 2021
+INFO 2021-08-28 19:10:00,665 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:11:24,920 [http-nio-3001-exec-1] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630159883, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630159883, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=ae003b16c835cf953e1b5e3549820eaaad4e6dda
+INFO 2021-08-28 19:11:57,286 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630159883, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630159883, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=ae003b16c835cf953e1b5e3549820eaaad4e6dda
+INFO 2021-08-28 19:13:07,421 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630159883, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630159883, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=ae003b16c835cf953e1b5e3549820eaaad4e6dda
+INFO 2021-08-28 19:14:20,963 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 19:17:54,969 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"101333195603929","time":1630160274147,"messaging":[{"sender":{"id":"4212532202172003"},"recipient":{"id":"101333195603929"},"timestamp":1630160273954,"message":{"mid":"m_ajflXGcb2VwMgtbNIfjppfAhMMFt0dfZCCg-_SKNHlk5bZgN3s-OaI3NoOdP0E-N9_j7PkMrcuPkZBYP4Jj4Aw","text":"hi"}}]}]} | signature: sha1=3fb68986618da9417f825beeb2c5c7b66676eeef
+DEBUG 2021-08-28 19:17:55,184 [http-nio-3001-exec-3] 28 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4212532202172003, recipientId=101333195603929, timestamp=2021-08-28T14:17:53.954Z, baseEventType=MESSAGING), messageId=m_ajflXGcb2VwMgtbNIfjppfAhMMFt0dfZCCg-_SKNHlk5bZgN3s-OaI3NoOdP0E-N9_j7PkMrcuPkZBYP4Jj4Aw, text=hi, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:17:55,185 [http-nio-3001-exec-3] 39 - Received message 'm_ajflXGcb2VwMgtbNIfjppfAhMMFt0dfZCCg-_SKNHlk5bZgN3s-OaI3NoOdP0E-N9_j7PkMrcuPkZBYP4Jj4Aw' with text 'hi' from user '4212532202172003' to user 101333195603929 at '2021-08-28T14:17:53.954Z'. To be forwarded to core
+DEBUG 2021-08-28 19:17:55,186 [http-nio-3001-exec-3] 41 - isGuest: true
+INFO 2021-08-28 19:17:55,186 [http-nio-3001-exec-3] 44 - queryParams: senderId=4212532202172003&refrenceId=101333195603929
+ERROR 2021-08-28 19:17:58,292 [http-nio-3001-exec-3] 79 - Message could not be sent to backend. An unexpected error occurred.
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://209.58.160.20:7313/inbound/": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:784)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:467)
+	at com.kalsym.facebook.wrapper.callback.handlers.TextMessageHandler.handleTextMessageEvent(TextMessageHandler.java:49)
+	at com.kalsym.facebook.wrapper.callback.CallbackController.lambda$handle$0(CallbackController.java:144)
+	at com.kalsym.facebook.wrapper.callback.CallbackController$$Lambda$1087/746076333.accept(Unknown Source)
+	at com.github.messenger4j.Messenger.onReceiveEvents(Messenger.java:270)
+	at com.kalsym.facebook.wrapper.callback.CallbackController.handle(CallbackController.java:138)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1167)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1103)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:997)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:931)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:775)
+	... 61 common frames omitted
+DEBUG 2021-08-28 19:17:58,295 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:18:43,369 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 19:18:49,985 [http-nio-3001-exec-1] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630160328672,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630160328406,"message":{"mid":"m_68f5vXiHHvH5Pf9PplKBuSoF_Fy00smIZ-1dH3VmFxwR5Jkoiek_cd4tlmD9dNfb_nTfphc2vOGis4a_rvh2NA","text":"hi"}}]}]} | signature: sha1=78cf49effd584b1f73118f6c57153c53e83b02bb
+DEBUG 2021-08-28 19:18:50,206 [http-nio-3001-exec-1] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T14:18:48.406Z, baseEventType=MESSAGING), messageId=m_68f5vXiHHvH5Pf9PplKBuSoF_Fy00smIZ-1dH3VmFxwR5Jkoiek_cd4tlmD9dNfb_nTfphc2vOGis4a_rvh2NA, text=hi, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:18:50,209 [http-nio-3001-exec-1] 455 - Received message 'm_68f5vXiHHvH5Pf9PplKBuSoF_Fy00smIZ-1dH3VmFxwR5Jkoiek_cd4tlmD9dNfb_nTfphc2vOGis4a_rvh2NA' with text 'hi' from user '4650696161621168' at '2021-08-28T14:18:48.406Z'
+INFO 2021-08-28 19:18:50,233 [http-nio-3001-exec-1] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 19:18:51,876 [http-nio-3001-exec-1] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:19:42,745 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630160377269,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630160377118,"message":{"mid":"m_6yv6UiO4CQH2fb-wA0clOyoF_Fy00smIZ-1dH3VmFxz64RhWPLRqowoh1v1XzbY7hBxvV2RS-8v3VEJAR4Iv_A","attachments":[{"type":"image","payload":{"url":"https:\/\/cdn.fbsbx.com\/v\/t59.2708-21\/227817768_367678181438335_1706824711593719736_n.gif?_nc_cat=103&ccb=1-5&_nc_sid=041f46&_nc_ohc=Pn1xBEj3Yv4AX9E7tgc&_nc_ht=cdn.fbsbx.com&oh=e7abcef428c99b365d852473a433e47f&oe=612BC89B"}}]}}]}]} | signature: sha1=57f73da7c75ed686239c9751e2390123447c43a4
+DEBUG 2021-08-28 19:19:42,766 [http-nio-3001-exec-3] 27 - Handling QuickReplyMessageEvent
+DEBUG 2021-08-28 19:19:42,767 [http-nio-3001-exec-3] 29 - senderId: 4650696161621168
+DEBUG 2021-08-28 19:19:42,769 [http-nio-3001-exec-3] 35 - Received rich media attachment of type 'IMAGE' with url: https://cdn.fbsbx.com/v/t59.2708-21/227817768_367678181438335_1706824711593719736_n.gif?_nc_cat=103&ccb=1-5&_nc_sid=041f46&_nc_ohc=Pn1xBEj3Yv4AX9E7tgc&_nc_ht=cdn.fbsbx.com&oh=e7abcef428c99b365d852473a433e47f&oe=612BC89B
+DEBUG 2021-08-28 19:19:42,771 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:19:53,855 [http-nio-3001-exec-5] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630160385056,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630160377118,"message":{"mid":"m_6yv6UiO4CQH2fb-wA0clOyoF_Fy00smIZ-1dH3VmFxz64RhWPLRqowoh1v1XzbY7hBxvV2RS-8v3VEJAR4Iv_A","attachments":[{"type":"image","payload":{"url":"https:\/\/cdn.fbsbx.com\/v\/t59.2708-21\/227817768_367678181438335_1706824711593719736_n.gif?_nc_cat=103&ccb=1-5&_nc_sid=041f46&_nc_ohc=Pn1xBEj3Yv4AX9E7tgc&_nc_ht=cdn.fbsbx.com&oh=e7abcef428c99b365d852473a433e47f&oe=612BC89B"}}]}}]}]} | signature: sha1=9fddc2230d0562993c559f8827e953d7f67bdff2
+DEBUG 2021-08-28 19:19:53,858 [http-nio-3001-exec-5] 27 - Handling QuickReplyMessageEvent
+DEBUG 2021-08-28 19:19:53,859 [http-nio-3001-exec-5] 29 - senderId: 4650696161621168
+DEBUG 2021-08-28 19:19:53,860 [http-nio-3001-exec-5] 35 - Received rich media attachment of type 'IMAGE' with url: https://cdn.fbsbx.com/v/t59.2708-21/227817768_367678181438335_1706824711593719736_n.gif?_nc_cat=103&ccb=1-5&_nc_sid=041f46&_nc_ohc=Pn1xBEj3Yv4AX9E7tgc&_nc_ht=cdn.fbsbx.com&oh=e7abcef428c99b365d852473a433e47f&oe=612BC89B
+DEBUG 2021-08-28 19:19:53,861 [http-nio-3001-exec-5] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:20:00,009 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 19:20:00,451 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 19:10:00 PKT 2021
+INFO 2021-08-28 19:20:00,451 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:20:54,915 [http-nio-3001-exec-7] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630160451817,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630160451577,"message":{"mid":"m_fIUL4ZmZDwRdCe7WPICEBSoF_Fy00smIZ-1dH3VmFxwM-t4hyKFyPslereWabMmzK2rtCC05AUHKG8vuUmbejw","text":"text"}}]}]} | signature: sha1=0ddf0a4e918a0f4bf637ce30963ee08e3dfeb993
+DEBUG 2021-08-28 19:20:54,920 [http-nio-3001-exec-7] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T14:20:51.577Z, baseEventType=MESSAGING), messageId=m_fIUL4ZmZDwRdCe7WPICEBSoF_Fy00smIZ-1dH3VmFxwM-t4hyKFyPslereWabMmzK2rtCC05AUHKG8vuUmbejw, text=text, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:20:54,922 [http-nio-3001-exec-7] 455 - Received message 'm_fIUL4ZmZDwRdCe7WPICEBSoF_Fy00smIZ-1dH3VmFxwM-t4hyKFyPslereWabMmzK2rtCC05AUHKG8vuUmbejw' with text 'text' from user '4650696161621168' at '2021-08-28T14:20:51.577Z'
+INFO 2021-08-28 19:20:54,935 [http-nio-3001-exec-7] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 19:20:57,481 [http-nio-3001-exec-7] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:21:31,998 [http-nio-3001-exec-9] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630160490902,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630160490644,"message":{"mid":"m_CrGD1uKx-tWfv78IXEZRnyoF_Fy00smIZ-1dH3VmFxwoQ0-E9LrsNdjwnscxQBmlMRrhhQO9yQa_zbaun_qt6Q","text":"generic"}}]}]} | signature: sha1=96ed0216ff24dfa76568a61b6557ff535bfe87d7
+DEBUG 2021-08-28 19:21:32,002 [http-nio-3001-exec-9] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T14:21:30.644Z, baseEventType=MESSAGING), messageId=m_CrGD1uKx-tWfv78IXEZRnyoF_Fy00smIZ-1dH3VmFxwoQ0-E9LrsNdjwnscxQBmlMRrhhQO9yQa_zbaun_qt6Q, text=generic, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:21:32,003 [http-nio-3001-exec-9] 455 - Received message 'm_CrGD1uKx-tWfv78IXEZRnyoF_Fy00smIZ-1dH3VmFxwoQ0-E9LrsNdjwnscxQBmlMRrhhQO9yQa_zbaun_qt6Q' with text 'generic' from user '4650696161621168' at '2021-08-28T14:21:30.644Z'
+DEBUG 2021-08-28 19:21:34,996 [http-nio-3001-exec-9] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:30:00,011 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 19:30:00,025 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 19:20:00 PKT 2021
+INFO 2021-08-28 19:30:00,027 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:40:00,005 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 19:40:00,021 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 19:30:00 PKT 2021
+INFO 2021-08-28 19:40:00,022 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:43:18,211 [http-nio-3001-exec-1] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630159883, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630159883, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=ae003b16c835cf953e1b5e3549820eaaad4e6dda
+INFO 2021-08-28 19:45:31,538 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 19:46:39,896 [http-nio-3001-exec-1] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 285520708
+INFO 2021-08-28 19:46:54,670 [http-nio-3001-exec-4] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 1854301316
+INFO 2021-08-28 19:47:25,334 [http-nio-3001-exec-5] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 842851270
+INFO 2021-08-28 19:50:00,008 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 19:50:00,188 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 19:40:00 PKT 2021
+INFO 2021-08-28 19:50:00,188 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 19:51:41,890 [http-nio-3001-exec-7] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630162301079,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630162301208,"read":{"watermark":1630162299386}}]}]} | signature: sha1=62ff94dd991c1330cb1ed9ddd7e7ba147ce09749
+INFO 2021-08-28 19:51:41,890 [http-nio-3001-exec-8] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630162301351,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630162301137,"message":{"mid":"m_ceRUylVODjMgIlqj3GrDrCoF_Fy00smIZ-1dH3VmFxxDlMYfQbI3cSAJvWBY-BoZ7k9hBO_-rjuU-1bMwPe6xA","text":"hi"}}]}]} | signature: sha1=bc7f51e0a81306669f62ddf12a6dd25d4f68d570
+DEBUG 2021-08-28 19:51:41,968 [http-nio-3001-exec-7] 175 - Processed callback payload successfully
+DEBUG 2021-08-28 19:51:41,968 [http-nio-3001-exec-8] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T14:51:41.137Z, baseEventType=MESSAGING), messageId=m_ceRUylVODjMgIlqj3GrDrCoF_Fy00smIZ-1dH3VmFxxDlMYfQbI3cSAJvWBY-BoZ7k9hBO_-rjuU-1bMwPe6xA, text=hi, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:51:41,968 [http-nio-3001-exec-8] 455 - Received message 'm_ceRUylVODjMgIlqj3GrDrCoF_Fy00smIZ-1dH3VmFxxDlMYfQbI3cSAJvWBY-BoZ7k9hBO_-rjuU-1bMwPe6xA' with text 'hi' from user '4650696161621168' at '2021-08-28T14:51:41.137Z'
+INFO 2021-08-28 19:51:41,984 [http-nio-3001-exec-8] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 19:51:42,969 [http-nio-3001-exec-8] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:53:40,369 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 19:53:45,964 [http-nio-3001-exec-1] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630162424557,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630162424672,"read":{"watermark":1630162422915}}]}]} | signature: sha1=0bc41cd5e995492c13e3526fc93cc5878c26276e
+DEBUG 2021-08-28 19:53:46,026 [http-nio-3001-exec-1] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:53:46,391 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630162424824,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630162424607,"message":{"mid":"m_4L0K9Hq0fjwMtGakUdic9yoF_Fy00smIZ-1dH3VmFxz-eNLw-Q4bU53WE9FTNTJBLWqOkeel524Y_LShGxJXuQ","text":"ok"}}]}]} | signature: sha1=5dbabd2bd3fe3d8912204323c18e078051326700
+DEBUG 2021-08-28 19:53:46,407 [http-nio-3001-exec-3] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T14:53:44.607Z, baseEventType=MESSAGING), messageId=m_4L0K9Hq0fjwMtGakUdic9yoF_Fy00smIZ-1dH3VmFxz-eNLw-Q4bU53WE9FTNTJBLWqOkeel524Y_LShGxJXuQ, text=ok, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:53:46,407 [http-nio-3001-exec-3] 455 - Received message 'm_4L0K9Hq0fjwMtGakUdic9yoF_Fy00smIZ-1dH3VmFxz-eNLw-Q4bU53WE9FTNTJBLWqOkeel524Y_LShGxJXuQ' with text 'ok' from user '4650696161621168' at '2021-08-28T14:53:44.607Z'
+INFO 2021-08-28 19:53:46,407 [http-nio-3001-exec-3] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 19:53:47,408 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 19:57:05,790 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 19:57:16,544 [http-nio-3001-exec-1] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630162636123,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630162636222,"read":{"watermark":1630162634470}}]}]} | signature: sha1=984ca69da24f16f24d984447b3370c4bb116c2bf
+INFO 2021-08-28 19:57:16,622 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630162636382,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630162636172,"message":{"mid":"m_JHneWM-xYbP_hu3-VhQBICoF_Fy00smIZ-1dH3VmFxxL-bG09efju1qZhUrvUfqHV4PUBwJsNjS3iwnxRPaA7Q","text":"ok"}}]}]} | signature: sha1=9a7a61921a0ac6097b13edbcb498a529ff3e1671
+DEBUG 2021-08-28 19:57:16,622 [http-nio-3001-exec-1] 175 - Processed callback payload successfully
+DEBUG 2021-08-28 19:57:16,622 [http-nio-3001-exec-2] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T14:57:16.172Z, baseEventType=MESSAGING), messageId=m_JHneWM-xYbP_hu3-VhQBICoF_Fy00smIZ-1dH3VmFxxL-bG09efju1qZhUrvUfqHV4PUBwJsNjS3iwnxRPaA7Q, text=ok, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 19:57:16,622 [http-nio-3001-exec-2] 455 - Received message 'm_JHneWM-xYbP_hu3-VhQBICoF_Fy00smIZ-1dH3VmFxxL-bG09efju1qZhUrvUfqHV4PUBwJsNjS3iwnxRPaA7Q' with text 'ok' from user '4650696161621168' at '2021-08-28T14:57:16.172Z'
+INFO 2021-08-28 19:57:16,638 [http-nio-3001-exec-2] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 19:57:17,638 [http-nio-3001-exec-2] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:00:00,014 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 20:00:00,190 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 19:50:00 PKT 2021
+INFO 2021-08-28 20:00:00,190 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 20:04:11,836 [main] 53 - [v@project.version@][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v@project.version@)
+INFO 2021-08-28 20:04:32,021 [http-nio-3001-exec-1] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163064169,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163063910,"message":{"mid":"m_0iSnm_uQfWOwygXD850aqCoF_Fy00smIZ-1dH3VmFxxy1AARypOxsIAzqMfTlNqsD4d4HNXKloRGJ3Ipb5kA5Q","text":"hi"}}]}]} | signature: sha1=d6847dc56235315d83fa02052b556b4daa57e8af
+DEBUG 2021-08-28 20:04:32,082 [http-nio-3001-exec-1] 448 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:04:23.910Z, baseEventType=MESSAGING), messageId=m_0iSnm_uQfWOwygXD850aqCoF_Fy00smIZ-1dH3VmFxxy1AARypOxsIAzqMfTlNqsD4d4HNXKloRGJ3Ipb5kA5Q, text=hi, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:04:32,082 [http-nio-3001-exec-1] 456 - Received message 'm_0iSnm_uQfWOwygXD850aqCoF_Fy00smIZ-1dH3VmFxxy1AARypOxsIAzqMfTlNqsD4d4HNXKloRGJ3Ipb5kA5Q' with text 'hi' from user '4650696161621168' at '2021-08-28T15:04:23.910Z'
+INFO 2021-08-28 20:04:32,082 [http-nio-3001-exec-1] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+INFO 2021-08-28 20:04:36,587 [http-nio-3001-exec-2] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163063869,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163063956,"read":{"watermark":1630163057215}}]}]} | signature: sha1=1fbfb064d99b945a1a478adac5e01e51676bd256
+DEBUG 2021-08-28 20:04:36,589 [http-nio-3001-exec-2] 176 - Processed callback payload successfully
+DEBUG 2021-08-28 20:04:38,175 [http-nio-3001-exec-1] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:05:02,759 [main] 53 - [v0.0.6-MVP][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
+INFO 2021-08-28 20:05:40,232 [main] 53 - [v0.0.6-MVP][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
+INFO 2021-08-28 20:05:49,103 [http-nio-3001-exec-1] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163147961,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163148053,"read":{"watermark":1630163146233}}]}]} | signature: sha1=fa9df2b5bb9d3939f28481685b002d2561be9d31
+DEBUG 2021-08-28 20:05:49,165 [http-nio-3001-exec-1] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:05:49,244 [http-nio-3001-exec-3] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163148213,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163148006,"message":{"mid":"m_0j27_I_jGk4xAnKyd5FE0SoF_Fy00smIZ-1dH3VmFxypoTeIjZfiTmfaZUq9X4jBg5TcFK10i6mjt7bdTq4c9g","text":"ok"}}]}]} | signature: sha1=1473a5de322ce978ab9004e1d31b1565dfa3115a
+DEBUG 2021-08-28 20:05:49,259 [http-nio-3001-exec-3] 448 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:05:48.006Z, baseEventType=MESSAGING), messageId=m_0j27_I_jGk4xAnKyd5FE0SoF_Fy00smIZ-1dH3VmFxypoTeIjZfiTmfaZUq9X4jBg5TcFK10i6mjt7bdTq4c9g, text=ok, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:05:49,259 [http-nio-3001-exec-3] 456 - Received message 'm_0j27_I_jGk4xAnKyd5FE0SoF_Fy00smIZ-1dH3VmFxypoTeIjZfiTmfaZUq9X4jBg5TcFK10i6mjt7bdTq4c9g' with text 'ok' from user '4650696161621168' at '2021-08-28T15:05:48.006Z'
+INFO 2021-08-28 20:05:49,275 [http-nio-3001-exec-3] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 20:05:50,275 [http-nio-3001-exec-3] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:06:21,512 [http-nio-3001-exec-5] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163180033,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163180260,"read":{"watermark":1630163178349}}]}]} | signature: sha1=9e323d45fee8b2785280736126105bad545150cd
+DEBUG 2021-08-28 20:06:21,512 [http-nio-3001-exec-5] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:06:21,850 [http-nio-3001-exec-7] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163180431,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163180203,"message":{"mid":"m_cdAlKKe6C3bx7qXlk1t-NCoF_Fy00smIZ-1dH3VmFxw2QQssxEoyb67EXmxV-tnYQycxIuwHH7iDVHKpWumM7Q","text":"text"}}]}]} | signature: sha1=1ea1ea6e0f342128850b6e486eefb1d72b6eaa9e
+DEBUG 2021-08-28 20:06:21,850 [http-nio-3001-exec-7] 448 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:06:20.203Z, baseEventType=MESSAGING), messageId=m_cdAlKKe6C3bx7qXlk1t-NCoF_Fy00smIZ-1dH3VmFxw2QQssxEoyb67EXmxV-tnYQycxIuwHH7iDVHKpWumM7Q, text=text, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:06:21,850 [http-nio-3001-exec-7] 456 - Received message 'm_cdAlKKe6C3bx7qXlk1t-NCoF_Fy00smIZ-1dH3VmFxw2QQssxEoyb67EXmxV-tnYQycxIuwHH7iDVHKpWumM7Q' with text 'text' from user '4650696161621168' at '2021-08-28T15:06:20.203Z'
+INFO 2021-08-28 20:06:21,865 [http-nio-3001-exec-7] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=EAAFDpU26kQoBABZA4Hwxaq0uYwGBi7qOeZC8qFqr6DQ02JXoyWkFwOnzZAGuYtZBxzS2M9aIqirPDO8qENtp8XxDDsbrfZAgzNuSrFPR613wPaFk5ZAcWD2ZCjqZB7k2IIssIXwwkwVCs1En3vxwERxWEahanMg9dFwu3zCbfUTeSyxlDYqPMzTz7OQd76xgSlXppzxjIw44LA8UuUpJkwlX
+DEBUG 2021-08-28 20:06:23,153 [http-nio-3001-exec-7] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:06:25,337 [http-nio-3001-exec-9] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163184857,"messaging":[{"sender":{"id":"109936261406444"},"recipient":{"id":"4650696161621168"},"timestamp":1630163184324,"message":{"mid":"m_R0KqwsF0h_y2iZEFhyMwNCoF_Fy00smIZ-1dH3VmFxzaqJnd6c0yLiS5lAZu30ma18H86_CfnKqh7hAyUqMJOA","is_echo":true,"text":"sample","metadata":"ZEE","app_id":355852229447946}}]}]} | signature: sha1=f0df7cc212235ef860ee4205573394935109fa95
+DEBUG 2021-08-28 20:06:25,352 [http-nio-3001-exec-9] 19 - Handling MessageEchoEvent
+INFO 2021-08-28 20:06:25,352 [http-nio-3001-exec-9] 25 - Received echo for message 'm_R0KqwsF0h_y2iZEFhyMwNCoF_Fy00smIZ-1dH3VmFxzaqJnd6c0yLiS5lAZu30ma18H86_CfnKqh7hAyUqMJOA' that has been sent to recipient '4650696161621168' by sender '109936261406444' at '2021-08-28T15:06:24.324Z'
+DEBUG 2021-08-28 20:06:25,352 [http-nio-3001-exec-9] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:06:25,447 [http-nio-3001-exec-1] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163184784,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163184828,"delivery":{"mids":["m_R0KqwsF0h_y2iZEFhyMwNCoF_Fy00smIZ-1dH3VmFxzaqJnd6c0yLiS5lAZu30ma18H86_CfnKqh7hAyUqMJOA"],"watermark":1630163184324}}]}]} | signature: sha1=38678bca014c3e33ad709f2e1faea948a58a5e95
+DEBUG 2021-08-28 20:06:25,447 [http-nio-3001-exec-1] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:08:53,113 [http-nio-3001-exec-3] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163331221,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163331316,"read":{"watermark":1630163331227}}]}]} | signature: sha1=562e671fdc4c45d28910b37b835dab1266d92ec4
+DEBUG 2021-08-28 20:08:53,114 [http-nio-3001-exec-3] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:08:54,016 [http-nio-3001-exec-5] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163332489,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163332579,"read":{"watermark":1630163330674}}]}]} | signature: sha1=fb37163fb13bd8d93b2e96a6153c8dad37d4bf04
+DEBUG 2021-08-28 20:08:54,016 [http-nio-3001-exec-5] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:08:54,036 [http-nio-3001-exec-7] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163332731,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163332531,"message":{"mid":"m_QhM_JTt3ei5z-3Eppds5ZSoF_Fy00smIZ-1dH3VmFxz0YuvjhMDnT3AjSnC4M3cziSjAZUTfe6cRCaOPEFmVDA","text":"hi"}}]}]} | signature: sha1=2da00c277ac92d770b6cad5e4dd830e16de55acf
+DEBUG 2021-08-28 20:08:54,037 [http-nio-3001-exec-7] 448 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:08:52.531Z, baseEventType=MESSAGING), messageId=m_QhM_JTt3ei5z-3Eppds5ZSoF_Fy00smIZ-1dH3VmFxz0YuvjhMDnT3AjSnC4M3cziSjAZUTfe6cRCaOPEFmVDA, text=hi, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:08:54,037 [http-nio-3001-exec-7] 456 - Received message 'm_QhM_JTt3ei5z-3Eppds5ZSoF_Fy00smIZ-1dH3VmFxz0YuvjhMDnT3AjSnC4M3cziSjAZUTfe6cRCaOPEFmVDA' with text 'hi' from user '4650696161621168' at '2021-08-28T15:08:52.531Z'
+INFO 2021-08-28 20:08:54,040 [http-nio-3001-exec-7] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=
+DEBUG 2021-08-28 20:08:55,252 [http-nio-3001-exec-7] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:08:55,990 [http-nio-3001-exec-9] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163335149,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163335240,"read":{"watermark":1630163333467}}]}]} | signature: sha1=94575fe699e9c23e33720fbf1d785d172d34ac97
+DEBUG 2021-08-28 20:08:55,991 [http-nio-3001-exec-9] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:08:57,321 [http-nio-3001-exec-1] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163336997,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163335194,"message":{"mid":"m_rr9t6Pz7ag83b7BZwoyLSSoF_Fy00smIZ-1dH3VmFxxzpadxOVP5VRUMFK5nKTr8psSxP5Dme3acT5Y_9nNyfA","text":"text"}}]}]} | signature: sha1=2016ccb5b4f569d265b64653cf19141269a3a105
+DEBUG 2021-08-28 20:08:57,321 [http-nio-3001-exec-1] 448 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:08:55.194Z, baseEventType=MESSAGING), messageId=m_rr9t6Pz7ag83b7BZwoyLSSoF_Fy00smIZ-1dH3VmFxxzpadxOVP5VRUMFK5nKTr8psSxP5Dme3acT5Y_9nNyfA, text=text, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:08:57,321 [http-nio-3001-exec-1] 456 - Received message 'm_rr9t6Pz7ag83b7BZwoyLSSoF_Fy00smIZ-1dH3VmFxxzpadxOVP5VRUMFK5nKTr8psSxP5Dme3acT5Y_9nNyfA' with text 'text' from user '4650696161621168' at '2021-08-28T15:08:55.194Z'
+INFO 2021-08-28 20:08:57,323 [http-nio-3001-exec-1] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=EAAFDpU26kQoBABZA4Hwxaq0uYwGBi7qOeZC8qFqr6DQ02JXoyWkFwOnzZAGuYtZBxzS2M9aIqirPDO8qENtp8XxDDsbrfZAgzNuSrFPR613wPaFk5ZAcWD2ZCjqZB7k2IIssIXwwkwVCs1En3vxwERxWEahanMg9dFwu3zCbfUTeSyxlDYqPMzTz7OQd76xgSlXppzxjIw44LA8UuUpJkwlX
+DEBUG 2021-08-28 20:08:58,508 [http-nio-3001-exec-1] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:09:00,313 [http-nio-3001-exec-3] 136 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163340126,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163340183,"delivery":{"mids":["m_kga6Nj_z-rhggC34QD4iZCoF_Fy00smIZ-1dH3VmFxyi7_sqAguflaAJgFTEGU5jZ8FSIwN5BC4m5aSX12dYmQ"],"watermark":1630163339694}}]}]} | signature: sha1=9b0d74bdd37bffa3153826b6febe369b7bb124c6
+DEBUG 2021-08-28 20:09:00,314 [http-nio-3001-exec-3] 176 - Processed callback payload successfully
+INFO 2021-08-28 20:10:00,027 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 20:10:00,167 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 20:00:00 PKT 2021
+INFO 2021-08-28 20:10:00,167 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 20:12:32,020 [main] 53 - [v0.0.6-MVP][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
+INFO 2021-08-28 20:15:37,825 [http-nio-3001-exec-1] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 846371012
+INFO 2021-08-28 20:15:52,364 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163751123,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163751228,"read":{"watermark":1630163749464}}]}]} | signature: sha1=86d249b05f98698a032cc542a5a3c634660a4200
+INFO 2021-08-28 20:15:52,395 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163751416,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163751162,"message":{"mid":"m_mWIsFZjPqd5UufAqmLi2lSoF_Fy00smIZ-1dH3VmFxwx_L7irCDUY-LGXltHTRQoPMJzNe27b_egEdGyRT2Qmw","text":"text"}}]}]} | signature: sha1=ee15157379d71b97c62536837a71d2f688dc03ae
+DEBUG 2021-08-28 20:15:52,448 [http-nio-3001-exec-2] 175 - Processed callback payload successfully
+DEBUG 2021-08-28 20:15:52,451 [http-nio-3001-exec-3] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:15:51.162Z, baseEventType=MESSAGING), messageId=m_mWIsFZjPqd5UufAqmLi2lSoF_Fy00smIZ-1dH3VmFxwx_L7irCDUY-LGXltHTRQoPMJzNe27b_egEdGyRT2Qmw, text=text, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:15:52,452 [http-nio-3001-exec-3] 455 - Received message 'm_mWIsFZjPqd5UufAqmLi2lSoF_Fy00smIZ-1dH3VmFxwx_L7irCDUY-LGXltHTRQoPMJzNe27b_egEdGyRT2Qmw' with text 'text' from user '4650696161621168' at '2021-08-28T15:15:51.162Z'
+INFO 2021-08-28 20:15:52,465 [http-nio-3001-exec-3] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=EAAFDpU26kQoBABZA4Hwxaq0uYwGBi7qOeZC8qFqr6DQ02JXoyWkFwOnzZAGuYtZBxzS2M9aIqirPDO8qENtp8XxDDsbrfZAgzNuSrFPR613wPaFk5ZAcWD2ZCjqZB7k2IIssIXwwkwVCs1En3vxwERxWEahanMg9dFwu3zCbfUTeSyxlDYqPMzTz7OQd76xgSlXppzxjIw44LA8UuUpJkwlX
+DEBUG 2021-08-28 20:15:54,061 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:15:56,532 [http-nio-3001-exec-6] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163755679,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163755801,"delivery":{"mids":["m_EyTdk0AKcsJpnKnuiQevmyoF_Fy00smIZ-1dH3VmFxz9eA1MqGDohsBwEHgO9OgvaBXu23KwuJ4KkENIt9t_sw"],"watermark":1630163755054}}]}]} | signature: sha1=bb074b2f986f9eb240b4aa5af12f952670f7140e
+DEBUG 2021-08-28 20:15:56,532 [http-nio-3001-exec-6] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:15:56,781 [http-nio-3001-exec-8] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163756200,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163756394,"read":{"watermark":1630163754512}}]}]} | signature: sha1=9c14a6d562fb4f6ae7369c2b62aaa4af43ce485f
+DEBUG 2021-08-28 20:15:56,781 [http-nio-3001-exec-8] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:15:57,198 [http-nio-3001-exec-10] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163756499,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163756238,"message":{"mid":"m_BWRMsZY6dWmwEeQyAixV8SoF_Fy00smIZ-1dH3VmFxy3BlocLb4VwXvom56PDp4W1Xr6NVrlVQUG27Lx7lDjXw","text":"generic"}}]}]} | signature: sha1=926a33b05fa310d28dd576344dc7d3ef5d4ddc02
+DEBUG 2021-08-28 20:15:57,199 [http-nio-3001-exec-10] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:15:56.238Z, baseEventType=MESSAGING), messageId=m_BWRMsZY6dWmwEeQyAixV8SoF_Fy00smIZ-1dH3VmFxy3BlocLb4VwXvom56PDp4W1Xr6NVrlVQUG27Lx7lDjXw, text=generic, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:15:57,199 [http-nio-3001-exec-10] 455 - Received message 'm_BWRMsZY6dWmwEeQyAixV8SoF_Fy00smIZ-1dH3VmFxy3BlocLb4VwXvom56PDp4W1Xr6NVrlVQUG27Lx7lDjXw' with text 'generic' from user '4650696161621168' at '2021-08-28T15:15:56.238Z'
+DEBUG 2021-08-28 20:15:59,241 [http-nio-3001-exec-10] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:02,391 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163760890,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163760951,"delivery":{"mids":["m_fL8xo9wfDArJfp5DkFbniioF_Fy00smIZ-1dH3VmFxyDeUCKzPm2vwfZFu2yaNjLBq_mBS_BrngeeXcRwxXu7Q"],"watermark":1630163760430}}]}]} | signature: sha1=08fb1884f0c788f12211274426968d03a9c4af57
+DEBUG 2021-08-28 20:16:02,391 [http-nio-3001-exec-2] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:18,056 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163777137,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163777287,"read":{"watermark":1630163777144}}]}]} | signature: sha1=4ddd25300e08bfc134ff31943ec82813449d86fa
+DEBUG 2021-08-28 20:16:18,056 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:18,872 [http-nio-3001-exec-6] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163778341,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163778445,"read":{"watermark":1630163776268}}]}]} | signature: sha1=a0840233ac7d2ddd001ae2f8f004ac29bc9b67a4
+DEBUG 2021-08-28 20:16:18,872 [http-nio-3001-exec-6] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:19,029 [http-nio-3001-exec-8] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163778611,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163778389,"message":{"mid":"m_nX27SMp8j_WZLUIRKkXwwioF_Fy00smIZ-1dH3VmFxy69LJwPRtKwFb0Iu4vRtqD8IeqP-I-8vgsKBzXg8MeXg","text":"receipt"}}]}]} | signature: sha1=bcff6b625c01f0cf62e383488931743854d068ce
+DEBUG 2021-08-28 20:16:19,029 [http-nio-3001-exec-8] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:16:18.389Z, baseEventType=MESSAGING), messageId=m_nX27SMp8j_WZLUIRKkXwwioF_Fy00smIZ-1dH3VmFxy69LJwPRtKwFb0Iu4vRtqD8IeqP-I-8vgsKBzXg8MeXg, text=receipt, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:16:19,029 [http-nio-3001-exec-8] 455 - Received message 'm_nX27SMp8j_WZLUIRKkXwwioF_Fy00smIZ-1dH3VmFxy69LJwPRtKwFb0Iu4vRtqD8IeqP-I-8vgsKBzXg8MeXg' with text 'receipt' from user '4650696161621168' at '2021-08-28T15:16:18.389Z'
+DEBUG 2021-08-28 20:16:20,771 [http-nio-3001-exec-8] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:23,044 [http-nio-3001-exec-10] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163782517,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163782560,"delivery":{"mids":["m_n5FsmzQoziyL0cphhNXSkioF_Fy00smIZ-1dH3VmFxzV_LY_VSWHr-2CFGy_8LdyW46VdOlE9MOi9KC24jse4Q"],"watermark":1630163781950}}]}]} | signature: sha1=4f5bb3612ea03e2641b3b7958411b3d632107c0b
+DEBUG 2021-08-28 20:16:23,044 [http-nio-3001-exec-10] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:24,119 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163783486,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163783579,"read":{"watermark":1630163783491}}]}]} | signature: sha1=1e2cd79ce1f1b38212bd1734566873372985c184
+DEBUG 2021-08-28 20:16:24,119 [http-nio-3001-exec-2] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:26,874 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163786189,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163786271,"read":{"watermark":1630163784520}}]}]} | signature: sha1=4682e7302cf24297fa91cd3e8f5bb9f1a9b3cd15
+DEBUG 2021-08-28 20:16:26,875 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:27,045 [http-nio-3001-exec-6] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163786456,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163786226,"message":{"mid":"m_OYZ8qHXXdHXTID755CoJICoF_Fy00smIZ-1dH3VmFxwrfK_97uUFddMI1itky8wL8U_7IYgKA0yAufgyJEjTGA","text":"quick reply"}}]}]} | signature: sha1=b54f4c60caf633bec39474f63d80727edd5157a9
+DEBUG 2021-08-28 20:16:27,045 [http-nio-3001-exec-6] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:16:26.226Z, baseEventType=MESSAGING), messageId=m_OYZ8qHXXdHXTID755CoJICoF_Fy00smIZ-1dH3VmFxwrfK_97uUFddMI1itky8wL8U_7IYgKA0yAufgyJEjTGA, text=quick reply, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:16:27,046 [http-nio-3001-exec-6] 455 - Received message 'm_OYZ8qHXXdHXTID755CoJICoF_Fy00smIZ-1dH3VmFxwrfK_97uUFddMI1itky8wL8U_7IYgKA0yAufgyJEjTGA' with text 'quick reply' from user '4650696161621168' at '2021-08-28T15:16:26.226Z'
+DEBUG 2021-08-28 20:16:27,759 [http-nio-3001-exec-6] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:30,821 [http-nio-3001-exec-8] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163789367,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163789412,"delivery":{"mids":["m_8EOSC9-riwysOj_2H8BS_SoF_Fy00smIZ-1dH3VmFxzpo6xc1IUrWilKomDwMRBUGaGGD982DL9E31aTWtsePw"],"watermark":1630163788939}}]}]} | signature: sha1=33096051bb6d7e4171485e85bc78c75d287ca62c
+DEBUG 2021-08-28 20:16:30,822 [http-nio-3001-exec-8] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:16:48,124 [http-nio-3001-exec-10] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163807533,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163807670,"read":{"watermark":1630163802173}}]}]} | signature: sha1=973ae02b51c77d2ddabc40b7a9a3fc135ade8b8b
+DEBUG 2021-08-28 20:16:48,125 [http-nio-3001-exec-10] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:18:44,894 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163924699,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163924758,"delivery":{"mids":["m_yz-IrNh8IWTacAd60xUFMSoF_Fy00smIZ-1dH3VmFxzSEuB7ttE4y_-if1hcP7ns5fCGj55JVREofW5HLZQuog"],"watermark":1630163924065}}]}]} | signature: sha1=f0c51e9952024c5a636ec017eef05e96644745b0
+DEBUG 2021-08-28 20:18:44,895 [http-nio-3001-exec-2] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:18:49,249 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163928243,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163928369,"read":{"watermark":1630163926544}}]}]} | signature: sha1=4cc67590442f8ece38837d6a2c40b716ee5d46fe
+DEBUG 2021-08-28 20:18:49,250 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:19:05,965 [http-nio-3001-exec-6] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163945745,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163945818,"delivery":{"mids":["m_xCFEJ2XpEzPdBQlQoSAzDSoF_Fy00smIZ-1dH3VmFxzt-NdUiGCTT_iD7jX3MHsm0t32PdCFZ8RA2VbayDINxw"],"watermark":1630163945249}}]}]} | signature: sha1=7757cef10c04003b4784444a6cfe488066d6d26d
+DEBUG 2021-08-28 20:19:05,966 [http-nio-3001-exec-6] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:19:07,544 [http-nio-3001-exec-8] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630163947312,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630163947428,"read":{"watermark":1630163945603}}]}]} | signature: sha1=5b720c332a69207fa37c3f9338e160947858266b
+DEBUG 2021-08-28 20:19:07,545 [http-nio-3001-exec-8] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:20:00,016 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 20:20:00,226 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 20:10:00 PKT 2021
+INFO 2021-08-28 20:20:00,226 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 20:21:48,739 [http-nio-3001-exec-10] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630164107, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630164107, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=6d222536e446cead687ec670f86f9dda6cff58a8
+INFO 2021-08-28 20:22:29,865 [http-nio-3001-exec-1] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630164107, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630164107, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=6d222536e446cead687ec670f86f9dda6cff58a8
+INFO 2021-08-28 20:23:39,636 [http-nio-3001-exec-2] 135 - Received Messenger Platform callback - payload: {"object": "page", "entry": [{"id": "0", "time": 1630164107, "changes": [{"field": "feed", "value": {"item": "status", "post_id": "44444444_444444444", "verb": "add", "published": 1, "created_time": 1630164107, "message": "Example post content.", "from": {"name": "Test Page", "id": "1067280970047460"}}}]}]} | signature: sha1=6d222536e446cead687ec670f86f9dda6cff58a8
+INFO 2021-08-28 20:24:46,074 [main] 53 - [v0.0.6-MVP][] 
+                                               
+,--. ,--.        ,--.                          
+|  .'   / ,--,--.|  | ,---.,--. ,--.,--,--,--. 
+|  .   ' ' ,-.  ||  |(  .-' \  '  / |        | 
+|  |\   \\ '-'  ||  |.-'  `) \   '  |  |  |  | 
+`--' '--' `--`--'`--'`----'.-'  /   `--`--`--' 
+                           `---'                :: com.kalsym ::              (v0.0.6-MVP)
+INFO 2021-08-28 20:30:00,011 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 20:30:00,165 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 20:20:00 PKT 2021
+INFO 2021-08-28 20:30:00,165 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 20:40:01,796 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 20:40:01,796 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 20:30:01 PKT 2021
+INFO 2021-08-28 20:40:01,796 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 20:50:00,023 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 20:50:00,026 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 20:40:00 PKT 2021
+INFO 2021-08-28 20:50:00,026 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 20:52:18,384 [http-nio-3001-exec-1] 109 - Received Webhook verification request - mode: subscribe | verifyToken: kalsym@123 | challenge: 1319215864
+INFO 2021-08-28 20:52:28,302 [http-nio-3001-exec-3] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630165946022,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630165762282,"message":{"mid":"m_bbCqV9LzUHVEnOy9G5jkOioF_Fy00smIZ-1dH3VmFxxhx5utPeL9mTXJJtlUvsTPj5wK8DrFKkTK8We68WzlIA","text":"OK"}}]}]} | signature: sha1=001e2e25e72bf2d49b3e06554b300eca61837d85
+DEBUG 2021-08-28 20:52:28,390 [http-nio-3001-exec-3] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:49:22.282Z, baseEventType=MESSAGING), messageId=m_bbCqV9LzUHVEnOy9G5jkOioF_Fy00smIZ-1dH3VmFxxhx5utPeL9mTXJJtlUvsTPj5wK8DrFKkTK8We68WzlIA, text=OK, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:52:28,391 [http-nio-3001-exec-3] 455 - Received message 'm_bbCqV9LzUHVEnOy9G5jkOioF_Fy00smIZ-1dH3VmFxxhx5utPeL9mTXJJtlUvsTPj5wK8DrFKkTK8We68WzlIA' with text 'OK' from user '4650696161621168' at '2021-08-28T15:49:22.282Z'
+INFO 2021-08-28 20:52:28,449 [http-nio-3001-exec-3] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=EAAFDpU26kQoBABZA4Hwxaq0uYwGBi7qOeZC8qFqr6DQ02JXoyWkFwOnzZAGuYtZBxzS2M9aIqirPDO8qENtp8XxDDsbrfZAgzNuSrFPR613wPaFk5ZAcWD2ZCjqZB7k2IIssIXwwkwVCs1En3vxwERxWEahanMg9dFwu3zCbfUTeSyxlDYqPMzTz7OQd76xgSlXppzxjIw44LA8UuUpJkwlX
+DEBUG 2021-08-28 20:52:29,926 [http-nio-3001-exec-3] 175 - Processed callback payload successfully
+INFO 2021-08-28 20:52:34,215 [http-nio-3001-exec-5] 135 - Received Messenger Platform callback - payload: {"object":"page","entry":[{"id":"109936261406444","time":1630165949832,"messaging":[{"sender":{"id":"4650696161621168"},"recipient":{"id":"109936261406444"},"timestamp":1630165944520,"message":{"mid":"m_9zhoNDio4wSpNLjmHFRR-yoF_Fy00smIZ-1dH3VmFxzbxxotTKA8ur7mxASqMzrOzLpJL9joh4jRu5qLic0dNw","text":"ok"}}]}]} | signature: sha1=64cb12bbcee4c512c9615027315f9c88a6f1921a
+DEBUG 2021-08-28 20:52:34,217 [http-nio-3001-exec-5] 447 - Received TextMessageEvent: TextMessageEvent(super=BaseEvent(senderId=4650696161621168, recipientId=109936261406444, timestamp=2021-08-28T15:52:24.520Z, baseEventType=MESSAGING), messageId=m_9zhoNDio4wSpNLjmHFRR-yoF_Fy00smIZ-1dH3VmFxzbxxotTKA8ur7mxASqMzrOzLpJL9joh4jRu5qLic0dNw, text=ok, nlpEntities=Optional.empty, priorMessage=Optional.empty)
+INFO 2021-08-28 20:52:34,218 [http-nio-3001-exec-5] 455 - Received message 'm_9zhoNDio4wSpNLjmHFRR-yoF_Fy00smIZ-1dH3VmFxzbxxotTKA8ur7mxASqMzrOzLpJL9joh4jRu5qLic0dNw' with text 'ok' from user '4650696161621168' at '2021-08-28T15:52:24.520Z'
+INFO 2021-08-28 20:52:34,223 [http-nio-3001-exec-5] 58 - urlWithToken:https://graph.facebook.com/v2.11/me/messages?access_token=EAAFDpU26kQoBABZA4Hwxaq0uYwGBi7qOeZC8qFqr6DQ02JXoyWkFwOnzZAGuYtZBxzS2M9aIqirPDO8qENtp8XxDDsbrfZAgzNuSrFPR613wPaFk5ZAcWD2ZCjqZB7k2IIssIXwwkwVCs1En3vxwERxWEahanMg9dFwu3zCbfUTeSyxlDYqPMzTz7OQd76xgSlXppzxjIw44LA8UuUpJkwlX
+DEBUG 2021-08-28 20:52:37,448 [http-nio-3001-exec-5] 175 - Processed callback payload successfully
+INFO 2021-08-28 21:00:00,007 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 21:00:00,052 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 20:50:00 PKT 2021
+INFO 2021-08-28 21:00:00,052 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 21:10:00,010 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 21:10:00,018 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 21:00:00 PKT 2021
+INFO 2021-08-28 21:10:00,018 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 21:20:00,013 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 21:20:00,017 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 21:10:00 PKT 2021
+INFO 2021-08-28 21:20:00,017 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 21:30:00,001 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 21:30:00,010 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 21:20:00 PKT 2021
+INFO 2021-08-28 21:30:00,010 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 21:40:00,011 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 21:40:00,016 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 21:30:00 PKT 2021
+INFO 2021-08-28 21:40:00,016 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 21:50:00,010 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 21:50:00,013 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 21:40:00 PKT 2021
+INFO 2021-08-28 21:50:00,014 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
+INFO 2021-08-28 22:00:00,008 [scheduling-1] 38 - [SessionSchedular] Started clearing expired sessions
+INFO 2021-08-28 22:00:00,015 [scheduling-1] 49 - [SessionSchedular] Sessions to handle 0 for date Sat Aug 28 21:50:00 PKT 2021
+INFO 2021-08-28 22:00:00,015 [scheduling-1] 65 - [SessionSchedular] Finished clearing expired sessions
