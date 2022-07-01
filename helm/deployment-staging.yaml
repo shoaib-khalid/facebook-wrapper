@@ -1,0 +1,149 @@
+affinity: {}
+applicationProdProperties:
+  configmap:
+    application-prod.properties: >
+      server.port=3001 
+
+      server.url=facebook-wrapper.default.svc.cluster.local
+
+
+      messenger.appSecret = 2a9f0365d6777a36f509c8d9deefcc83
+
+      messenger.verifyToken = kalsym@123
+
+      messenger.pageAccessToken =
+      EAApbSrLFJ14BAPVHIT81HkWQGYvIKadRRM7VgJf6tXkmhnghGZC5eABfy9f2tjvUXYprtRyvqSgPZB726L2xaFta7b2bMDd6QFkh11XYUCZClItSbky4LYOm3X0fJidi9TBzBL2tEzZB13XtIXJEv38iQH8q4E7GLrgGOI5S4qZBWKT3F1MtdkFZBkqk7DbZBcZD
+
+
+      #logging.config=logback.xml
+
+      logging.level.org.springframework=INFO
+
+      logging.level.root=info
+
+      logging.file=app.log
+
+
+      spring.jpa.hibernate.ddl-auto=none
+
+      spring.datasource.url=jdbc:mysql://my-release-mysql-primary.default.svc.cluster.local:3306/symplified
+
+
+
+      spring.datasource.username=root
+
+
+
+      spring.datasource.password=kalsym@123
+
+      spring.datasource.hikari.connection-timeout=30000
+
+
+
+
+
+      spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+
+
+      backend.ip=flow-core.default.svc.cluster.local
+
+      backend.port=5001
+
+      backend.message.endpoint=callback/message
+
+      backend.postback.endpoint=callback/postback
+
+      backend.refrenced.id=5fd9d71e765e70c00fc05346
+
+
+      handover.service.portt=6001
+
+
+
+
+      handover.service.url=handover-service.default.svc.cluster.local
+
+      handover.service.request.path=/inbound/customer/message
+
+      handover.session.expiry.in.miliseconds=432000000
+
+
+      secondary_receiver_app_id=835103589938459
+
+
+      resources_url=https://raw.githubusercontent.com/fbsamples/messenger-platform-samples/master/node/public
+
+
+      clear.expired.sessions.job=0 */10 * * * *
+
+      session.expire.qualify.minutes=10
+  volumeMount:
+    - mountPath: /home/docker/Software/application-prod.properties
+      name: facebook-wrapper-approd-vol
+      subPath: application-prod.properties
+  volumes:
+    - configMap:
+        name: facebook-wrapper-approd-cm
+      name: facebook-wrapper-approd-vol
+applicationProperties:
+  configmap:
+    application.properties: >
+      # Default config (refrain from editting this config, please add in
+      application-prod.properties below)
+
+      spring.profiles.active=prod
+
+      proj.name=facebook-wrapper
+
+      build.version=@project.version@
+  volumeMount:
+    - mountPath: /home/docker/Software/application.properties
+      name: facebook-wrapper-ap-vol
+      subPath: application.properties
+  volumes:
+    - configMap:
+        name: facebook-wrapper-ap-cm
+      name: facebook-wrapper-ap-vol
+autoscaling:
+  enabled: false
+  maxReplicas: 100
+  minReplicas: 1
+  targetCPUUtilizationPercentage: 80
+fullnameOverride: ''
+image:
+  pullPolicy: Always
+  repository: kalsym/facebook-wrapper
+  tag: 0.0.6-MVP
+imagePullSecrets:
+  - name: kalsym-docker-hub
+ingress:
+  annotations: {}
+  className: ''
+  enabled: true
+  hosts:
+    - host: fbw.symplified.it
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - fbw.symplified.it
+      secretName: secret-tls-it
+logback: {}
+nameOverride: ''
+nodeSelector: {}
+podAnnotations: {}
+podSecurityContext: {}
+replicaCount: 1
+resources: {}
+securityContext: {}
+service:
+  port: 3001
+  type: ClusterIP
+serviceAccount:
+  annotations: {}
+  create: false
+  name: ''
+tolerations: []
